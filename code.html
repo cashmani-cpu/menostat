@@ -103,10 +103,46 @@
 <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200" href="#pricing">Assessment</a>
 <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200" href="#resources">Resources</a>
 </div>
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide hover:scale-95 duration-150 transition-transform shadow-lg shadow-primary/20">
+<div class="flex items-center gap-3">
+<button class="hidden sm:block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide hover:scale-95 duration-150 transition-transform shadow-lg shadow-primary/20">
                 Start Consultation
             </button>
+<button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+<span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar1"></span>
+<span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar2"></span>
+<span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar3"></span>
+</button>
+</div>
 </nav>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="md:hidden hidden flex-col gap-0 border-t border-outline-variant/10 bg-slate-50/95 backdrop-blur-xl font-['Manrope'] font-semibold">
+<a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="#how-it-works">How it Works</a>
+<a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="#symptoms">Symptoms</a>
+<a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="#pricing">Assessment</a>
+<a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors" href="#resources">Resources</a>
+</div>
+<script>
+const toggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('mobile-menu');
+const bar1 = document.getElementById('bar1');
+const bar2 = document.getElementById('bar2');
+const bar3 = document.getElementById('bar3');
+toggle.addEventListener('click', () => {
+    const open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', open);
+    menu.classList.toggle('flex', !open);
+    bar1.style.transform = open ? '' : 'translateY(8px) rotate(45deg)';
+    bar2.style.opacity = open ? '' : '0';
+    bar3.style.transform = open ? '' : 'translateY(-8px) rotate(-45deg)';
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    menu.classList.remove('flex');
+    bar1.style.transform = '';
+    bar2.style.opacity = '';
+    bar3.style.transform = '';
+}));
+</script>
 </header>
 <main class="pt-20">
 <!-- Hero Section -->
@@ -117,7 +153,7 @@
 <span class="material-symbols-outlined text-[18px]">verified</span>
 <span class="text-[10px] font-bold tracking-widest uppercase">Expert Medical Guidance</span>
 </div>
-<h1 class="font-headline font-extrabold text-5xl md:text-7xl text-on-surface leading-[1.1] tracking-tight">
+<h1 class="font-headline font-extrabold text-4xl md:text-7xl text-on-surface leading-[1.1] tracking-tight">
                         Feel like yourself again. <span class="text-primary">Precisely.</span>
 </h1>
 <p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed font-light">
