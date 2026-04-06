@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MenoStat | Clinical Precision in Menopause Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface": "#f7f9fc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary": "#4d5d70",
+                        "surface-container-high": "#e6e8eb",
+                        "outline": "#717786",
+                        "on-tertiary-fixed": "#0b1d2d",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#68fadd",
+                        "inverse-on-surface": "#eff1f4",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface-tint": "#005bc0",
+                        "primary": "#0059bb",
+                        "background": "#f7f9fc",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00201a",
+                        "on-primary-fixed": "#001a41",
+                        "tertiary-fixed-dim": "#b7c8de",
+                        "surface-container-low": "#f2f4f7",
+                        "surface-container-highest": "#e0e3e6",
+                        "primary-container": "#0070ea",
+                        "on-primary-container": "#fefcff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fc",
+                        "surface-variant": "#e0e3e6",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-container": "#eceef1",
+                        "on-tertiary-container": "#fdfcff",
+                        "on-secondary-fixed-variant": "#005145",
+                        "tertiary-container": "#65768a",
+                        "secondary-fixed": "#68fadd",
+                        "on-secondary-container": "#007261",
+                        "on-tertiary-fixed-variant": "#38485a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#adc7ff",
+                        "outline-variant": "#c1c6d7",
+                        "surface-dim": "#d8dadd",
+                        "on-surface-variant": "#414754",
+                        "secondary-fixed-dim": "#44ddc1",
+                        "on-background": "#191c1e",
+                        "secondary": "#006b5c",
+                        "inverse-primary": "#adc7ff",
+                        "tertiary-fixed": "#d2e4fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-header {
+            background: rgba(247, 249, 252, 0.7);
+            backdrop-filter: blur(24px);
+        }
+        .tonal-transition {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-outline-variant/10">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">
+                MenoStat
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] font-semibold tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200" href="#how-it-works">How it Works</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200" href="#symptoms">Symptoms</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200" href="#pricing">Assessment</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200" href="#resources">Resources</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide hover:scale-95 duration-150 transition-transform shadow-lg shadow-primary/20">
+                Start Consultation
+            </button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden bg-surface py-20">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
+<div class="flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 w-fit">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">Expert Medical Guidance</span>
+</div>
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl text-on-surface leading-[1.1] tracking-tight">
+                        Feel like yourself again. <span class="text-primary">Precisely.</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed font-light">
+                        Personalized hormone care for menopause. Prescribed online by specialists and delivered directly to your home.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-2">
+<button class="bg-primary text-on-primary px-8 py-5 rounded-lg font-headline font-extrabold text-lg flex items-center justify-center gap-3 hover:bg-primary-container transition-all shadow-xl shadow-primary/20">
+                            Start Your Health Profile
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="aspect-square rounded-3xl overflow-hidden bg-surface-container-low border border-outline-variant/30 p-4 shadow-2xl">
+<img alt="Confident, elegant woman in a modern clinical setting representing biological stability" class="w-full h-full object-cover rounded-2xl brightness-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJX3usXLyc7SrB3yF2fO4gcA_fMEijGph0Fs3QS1xBNwI95ralNTT5fClroJi5mYRg1i8aDEv3d4y5HcMdqvk1WxJtwR-RvQ_vM_kgq0Wf9AIzS9w2sobWwZL6LKZM0CcX1AMPCzuy89OzulnVcPvMxM2Tkl6fbtU66yBXoeDeh0J29nNv2PvGUKu6DINybE0pF5rJkf8UoqOQMipI4gHL0dojUFy2wTcaYs1X1_WXMjMcHsGi2vVxkw8NoEvZwCQCHRT-ZSJ-ixgT"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/20 shadow-2xl max-w-[260px]">
+<div class="flex gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">pulse_alert</span>
+<span class="font-headline font-bold text-sm">Hormonal Balance</span>
+</div>
+<div class="h-12 flex items-end gap-1.5">
+<div class="bg-secondary/20 w-full h-[30%] rounded-sm"></div>
+<div class="bg-secondary/40 w-full h-[50%] rounded-sm"></div>
+<div class="bg-secondary/60 w-full h-[80%] rounded-sm"></div>
+<div class="bg-secondary w-full h-[95%] rounded-sm"></div>
+<div class="bg-primary w-full h-[98%] rounded-sm"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-3 uppercase tracking-tighter font-semibold">Regaining Vitality</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why MenoStat Section -->
+<section class="py-32 bg-white border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<span class="text-primary font-bold text-xs uppercase tracking-[0.3em] mb-4 block">The MenoStat Difference</span>
+<h2 class="font-headline font-bold text-3xl md:text-5xl mb-8">Why trust MenoStat?</h2>
+<p class="text-on-surface-variant text-lg max-w-3xl mx-auto leading-relaxed mb-16">
+                    Menopause is a biological shift that requires scientific care. We help you balance your body's levels so you can reclaim your energy, mood, and sleep.
+                </p>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">biotech</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-3">Evidence-Based Care</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">We use over 40 health markers to create a plan that fits your body exactly.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">medication_liquid</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-3">Premium Treatments</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Only high-grade, bio-identical options and clinical compounds prescribed by specialists.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-3">Dedicated Support</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Connect with your clinical team anytime. We adjust your care as you progress.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Symptom Matrix -->
+<section class="py-32 bg-surface-container-low" id="symptoms">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-20 text-center md:text-left">
+<h2 class="font-headline font-bold text-4xl md:text-5xl mb-6">Targeted Relief</h2>
+<p class="text-on-surface-variant max-w-2xl text-lg">Specialized medical support for the main areas of change.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-2xl border border-outline-variant/15 hover:border-primary/30 transition-all group shadow-sm">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="thermostat">thermostat</span>
+<span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest bg-surface px-2 py-1 rounded">Temperature Control</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-4">Hot Flashes &amp; Night Sweats</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 text-base">Helping your body regulate temperature more effectively to reduce heat waves and perspiration.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm cursor-pointer group-hover:gap-3 transition-all">
+                            View Care Options <span class="material-symbols-outlined text-[18px]">east</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-2xl border border-outline-variant/15 hover:border-primary/30 transition-all group shadow-sm">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="psychology">psychology</span>
+<span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest bg-surface px-2 py-1 rounded">Cognitive Function</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-4">Mental Clarity &amp; Sleep</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 text-base">Restoring focus and supporting deeper sleep cycles through targeted care.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm cursor-pointer group-hover:gap-3 transition-all">
+                            View Care Options <span class="material-symbols-outlined text-[18px]">east</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-2xl border border-outline-variant/15 hover:border-primary/30 transition-all group shadow-sm">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="face">face</span>
+<span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest bg-surface px-2 py-1 rounded">Physical Health</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-4">Skin, Hair &amp; Bone Support</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 text-base">Supporting skin elasticity and bone density to maintain long-term physical strength.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm cursor-pointer group-hover:gap-3 transition-all">
+                            View Care Options <span class="material-symbols-outlined text-[18px]">east</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-10 rounded-2xl border border-outline-variant/15 hover:border-primary/30 transition-all group shadow-sm">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="monitoring">monitoring</span>
+<span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest bg-surface px-2 py-1 rounded">Metabolic Function</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-4">Weight &amp; Vitality</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 text-base">Addressing shifts that impact your body's energy levels and natural weight balance.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm cursor-pointer group-hover:gap-3 transition-all">
+                            View Care Options <span class="material-symbols-outlined text-[18px]">east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Simplified Mechanism of Action -->
+<section class="py-32 bg-surface" id="how-it-works">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="font-headline font-bold text-4xl mb-4">Three Simple Steps to Support</h2>
+<p class="text-on-surface-variant">Our streamlined process for personalized care.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-12 relative">
+<!-- Connector Line (hidden on mobile) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/20 -translate-y-12"></div>
+<div class="relative flex flex-col items-center text-center group">
+<div class="w-24 h-24 bg-primary text-on-primary rounded-full flex items-center justify-center font-headline font-black text-3xl mb-8 relative z-10 shadow-xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">quiz</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-4 uppercase tracking-tighter">1. Digital Health Intake</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">Share your symptoms and history through a quick, secure online assessment.</p>
+</div>
+<div class="relative flex flex-col items-center text-center group">
+<div class="w-24 h-24 bg-primary text-on-primary rounded-full flex items-center justify-center font-headline font-black text-3xl mb-8 relative z-10 shadow-xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">rate_review</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-4 uppercase tracking-tighter">2. Clinical Review</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">A board-certified specialist reviews your profile to create a custom care plan.</p>
+</div>
+<div class="relative flex flex-col items-center text-center group">
+<div class="w-24 h-24 bg-primary text-on-primary rounded-full flex items-center justify-center font-headline font-black text-3xl mb-8 relative z-10 shadow-xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">local_shipping</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-4 uppercase tracking-tighter">3. Direct Delivery</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">Receive your prescribed care in secure, discreet packaging delivered to your door.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Layer -->
+<section class="py-32 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline font-bold text-4xl mb-6">Expertly Formulated Treatments</h2>
+<p class="text-on-surface-variant text-lg">We use modern delivery methods designed for effective absorption and daily comfort.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<div class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all shadow-sm">
+<span class="material-symbols-outlined">west</span>
+</div>
+<div class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all shadow-sm">
+<span class="material-symbols-outlined">east</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="bg-white p-3 rounded-2xl shadow-lg hover:shadow-2xl group cursor-pointer border border-transparent hover:border-primary/20 transition-all">
+<div class="aspect-[4/3] bg-surface-container-low rounded-xl overflow-hidden mb-8 relative">
+<img alt="Transdermal Patch" class="w-full h-full object-cover transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa6tF1MwL1I0VrqoZt0rZJ_J2DzKRaB5fJiCcUljqHfmHcKob90T9CiyCmrahGdG-LaeXlmbYZQse2nYWXr9ZL_398w57kTrQjJSmbSpMEl6njAE-SSdY6Edn-5c4ICR36N2DuikOLckxsjlE0nCc6V55XnbiEZJALaOCEGtfgV02iLRQTFwGHU1HmsxZmiN5Qn6v-MkziBo-kDTeGZChe5QyrbTDLPWnBtdBXims8YhNvV9RSMUDM661D-GAKYiQCcAj0yQs_Jyrn"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary text-[10px] font-bold px-3 py-1.5 uppercase rounded-full shadow-lg">Daily Application</div>
+</div>
+<div class="px-5 pb-8">
+<h4 class="font-headline font-bold text-xl mb-3">Transdermal Patches</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Discreet patches designed for steady, continuous release throughout your day.</p>
+</div>
+</div>
+<div class="bg-white p-3 rounded-2xl shadow-lg hover:shadow-2xl group cursor-pointer border border-transparent hover:border-primary/20 transition-all">
+<div class="aspect-[4/3] bg-surface-container-low rounded-xl overflow-hidden mb-8 relative">
+<img alt="Cream Pump" class="w-full h-full object-cover transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWXXsyOx4B8aH4oroRts7ldR0Lfvd3U3eSijxXXfgzid2ZMPmEwO8Fxxe_m_Fde3zV1mMezo0DAnSfz7pKP9a57sljD1DDOf6GZ57JVXMC8FCXwtfXGCeLi5cDEvFC_uom-RrREQEMcIpKtJNg-lkuPrX0usrwYPDGfD8wzeEx9zf3YtUqjQJJkMNX7dOuWYymtTjWywnpysXT1Misb8kQn3nqKP1jZIejnj90V-_N2XKCw1dVElNFWMtU6wGfqfOZYuo2DrhJy6qS"/>
+<div class="absolute top-4 right-4 bg-secondary text-on-secondary text-[10px] font-bold px-3 py-1.5 uppercase rounded-full shadow-lg">Precision Pump</div>
+</div>
+<div class="px-5 pb-8">
+<h4 class="font-headline font-bold text-xl mb-3">Topical Creams</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Specialized creams delivered in measured doses for targeted physiological support.</p>
+</div>
+</div>
+<div class="bg-white p-3 rounded-2xl shadow-lg hover:shadow-2xl group cursor-pointer border border-transparent hover:border-primary/20 transition-all">
+<div class="aspect-[4/3] bg-surface-container-low rounded-xl overflow-hidden mb-8 relative">
+<img alt="Capsules" class="w-full h-full object-cover transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUhIZbb3DGq45cxmfzZdaSNlC2WkuFHGqlHfVDshRiocFMdcQNgvTbCZ4xnU0qwfZZDVj5gtDlCqFqqjJXZuyS-fQ1HRWMFI6kfws-bioqdm3AdKw8N98fywxAmC2suBQXncwm-wTMwwDRfPcAJv20EQ2zwFbrbAUiq6nhrTB0QQAOkHgM4GixpTmIqqF0jP4N4bWF5xDpAXMmuiAyHpToHye1wFcjb4vt8rHAC-qjfUyHtuNt68bFSMa4T58aH2EXDD1A3Sc4aCat"/>
+<div class="absolute top-4 right-4 bg-tertiary text-on-tertiary text-[10px] font-bold px-3 py-1.5 uppercase rounded-full shadow-lg">Internal Support</div>
+</div>
+<div class="px-5 pb-8">
+<h4 class="font-headline font-bold text-xl mb-3">Systemic Support</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">High-grade capsules formulated to support your body's natural internal balance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Subscription Engine / Assessment Section -->
+<section class="py-32 bg-surface" id="pricing">
+<div class="max-w-4xl mx-auto px-6">
+<div class="bg-on-surface rounded-3xl p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 left-0 w-full h-1.5 bg-primary"></div>
+<div class="relative z-10 flex flex-col items-center">
+<span class="text-primary font-bold text-xs uppercase tracking-[0.4em] mb-8">Clinical Symptom Evaluation</span>
+<h2 class="font-headline font-extrabold text-3xl md:text-5xl mb-12">Take Your Free Assessment with a Certified Specialist.</h2>
+<ul class="flex flex-col gap-6 text-left max-w-md w-full mb-12 text-surface-variant/90 text-base">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<p>Get a personalized health profile reviewed by board-certified specialists.</p>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<p>Understand how biological shifts are impacting your physical and mental health.</p>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<p>Receive a custom care plan designed for your specific clinical needs.</p>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<p>Zero-friction digital intake with no waiting rooms or travel required.</p>
+</li>
+</ul>
+<button class="w-full sm:w-auto bg-primary text-on-primary px-12 py-5 rounded-xl font-headline font-extrabold text-2xl hover:scale-105 transition-transform shadow-xl shadow-primary/30">
+                            Start Free Assessment
+                        </button>
+<p class="mt-8 text-sm text-surface-variant/50 italic font-light max-w-sm">Secure and confidential. Your data is protected by clinical privacy standards.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Resources Section -->
+<section class="py-32 bg-surface-container-low" id="resources">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20">
+<span class="text-primary font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Knowledge Center</span>
+<h2 class="font-headline font-bold text-4xl md:text-5xl mb-6">Resources</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">Evidence-based guides to help you understand menopause and make informed decisions about your care.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/15 hover:border-primary/30 transition-all group shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-2xl">menu_book</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-3">Understanding HRT</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">A comprehensive guide to hormone replacement therapy — what it is, how it works, and who it's right for.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm cursor-pointer group-hover:gap-3 transition-all">
+Read Guide <span class="material-symbols-outlined text-[18px]">east</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/15 hover:border-primary/30 transition-all group shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-2xl">science</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-3">The Science of Menopause</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">How hormonal shifts affect your body, brain, and long-term health — explained by our clinical team.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm cursor-pointer group-hover:gap-3 transition-all">
+Read Guide <span class="material-symbols-outlined text-[18px]">east</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/15 hover:border-primary/30 transition-all group shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-2xl">quiz</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-3">FAQs</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Answers to the most common questions about symptoms, treatments, safety, and our care process.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm cursor-pointer group-hover:gap-3 transition-all">
+View FAQs <span class="material-symbols-outlined text-[18px]">east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Badges Section -->
+<section class="py-20 border-t border-outline-variant/10 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl text-primary">encrypted</span>
+<span class="font-headline font-bold text-xs tracking-wider uppercase">Secure &amp; Private</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl text-primary">verified_user</span>
+<span class="font-headline font-bold text-xs tracking-wider uppercase">Certified Specialists</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl text-primary">science</span>
+<span class="font-headline font-bold text-xs tracking-wider uppercase">Clinical Standards</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl text-primary">local_shipping</span>
+<span class="font-headline font-bold text-xs tracking-wider uppercase">Reliable Delivery</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-6 border-t border-slate-200/10 bg-slate-50 dark:bg-slate-950 font-['Inter']">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-12">
+<div class="text-2xl font-black text-slate-900 dark:text-slate-100 uppercase tracking-tighter">
+                MenoStat
+            </div>
+<div class="flex flex-wrap justify-center gap-8 text-[11px] uppercase tracking-widest font-bold">
+<a class="text-slate-500 dark:text-slate-500 hover:text-primary transition-colors" href="#">Privacy Standards</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-primary transition-colors" href="#">Compliance</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-primary transition-colors" href="#">Certifications</a>
+</div>
+<div class="text-slate-400 dark:text-slate-600 text-[10px] text-center md:text-right uppercase tracking-[0.2em] font-medium">
+                © 2024 MenoStat Medical. Specialist Care for Menopause.
+            </div>
+</div>
+</footer>
+</body></html>
