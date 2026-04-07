@@ -939,6 +939,7 @@ function handleCrisisQ(val) {
 // GOOGLE SHEETS ENDPOINT — paste your Web App URL here
 // ═══════════════════════════════════════════════════
 const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzrqZR81qcHU5P6ZxD7aKXtsC_7iG59IuY0Nc3CE3StFOLTuFdgzCb-uvgU2pq1oU7X/exec';
+const SESSION_ID = Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
 
 // ═══════════════════════════════════════════════════
 // EMAIL CAPTURE
@@ -965,6 +966,7 @@ function submitToSheets(category) {
   if (!SHEETS_URL || SHEETS_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') return;
   const s = getMrsSubscores();
   const payload = {
+    session_id:     SESSION_ID,
     timestamp:      new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
     name:           document.getElementById('q-name')?.value?.trim() || '',
     email:          window._capturedEmail || '',
@@ -1277,14 +1279,15 @@ function submitBooking() {
   window._capturedPhone = phone;
   if (email) window._capturedEmail = email;
 
-  // Submit to Google Sheets
+  // Update the existing assessment row with phone + appointment flag
   if (SHEETS_URL && SHEETS_URL !== 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
     fetch(SHEETS_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        timestamp:            new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        action:               'update',
+        session_id:           SESSION_ID,
         name:                 name,
         email:                email,
         phone:                '+91' + phone,
