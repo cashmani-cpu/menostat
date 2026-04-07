@@ -60,6 +60,7 @@
   <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
     <a href="index.html" class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">Menostat</a>
     <div class="hidden md:flex items-center gap-8 font-['Manrope'] font-semibold tracking-tight">
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html">Home</a>
       <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#how-it-works">How it Works</a>
       <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#symptoms">Symptoms</a>
       <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#pricing">Assessment</a>
@@ -78,6 +79,7 @@
     <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#how-it-works">How it Works</a>
     <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#symptoms">Symptoms</a>
     <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#pricing">Assessment</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html">Home</a>
     <a class="px-6 py-4 text-blue-600 font-bold hover:bg-slate-100 transition-colors" href="faq.html">Resources</a>
   </div>
   <script>
@@ -89,8 +91,20 @@
 
 <main class="pt-20">
 
+  <!-- ── BREADCRUMB ───────────────────────────────────────── -->
+  <div class="max-w-4xl mx-auto px-6 pt-8">
+    <nav class="flex items-center gap-2 text-sm text-on-surface-variant font-body">
+      <a href="index.html" class="flex items-center gap-1 hover:text-primary transition-colors duration-200 font-semibold">
+        <span class="material-symbols-outlined text-[16px]">home</span>
+        Home
+      </a>
+      <span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+      <span class="text-on-surface font-semibold">FAQs &amp; Resources</span>
+    </nav>
+  </div>
+
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="py-20 bg-surface border-b border-outline-variant/10">
+  <section class="py-16 bg-surface border-b border-outline-variant/10">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 w-fit mx-auto mb-6">
         <span class="material-symbols-outlined text-[18px]">quiz</span>
