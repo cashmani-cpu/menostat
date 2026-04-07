@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Free Symptom Assessment | Menostat</title>
+<meta name="description" content="Take Menostat's free, clinically validated menopause and perimenopause symptom assessment. Built on the Menopause Rating Scale, used by the Indian Menopause Society."/>
+<link rel="canonical" href="https://menostat.com/assessment.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode:"class",
+    theme:{extend:{
+      colors:{
+        "on-primary":"#ffffff","surface":"#f7f9fc","surface-container-lowest":"#ffffff",
+        "tertiary":"#4d5d70","outline":"#717786","primary":"#0059bb","background":"#f7f9fc",
+        "primary-container":"#0070ea","on-primary-container":"#fefcff","on-secondary":"#ffffff",
+        "surface-variant":"#e0e3e6","surface-container-low":"#f2f4f7","surface-container-highest":"#e0e3e6",
+        "on-tertiary":"#ffffff","on-surface":"#191c1e","outline-variant":"#c1c6d7",
+        "surface-dim":"#d8dadd","on-surface-variant":"#414754","on-background":"#191c1e",
+        "secondary":"#006b5c","surface-container":"#eceef1","tertiary-container":"#65768a"
+      },
+      borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},
+      fontFamily:{headline:["Manrope"],body:["Inter"],label:["Inter"]}
+    }}
+  }
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}
+  .step{display:none;animation:fadeUp .35s ease both;}
+  .step.active{display:block;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+  /* Severity chips */
+  .severity-option input{display:none;}
+  .severity-option label{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:2px;padding:10px 6px;border-radius:10px;border:1.5px solid #c1c6d7;
+    cursor:pointer;transition:all .15s;font-family:'Manrope',sans-serif;
+    font-size:11px;font-weight:600;text-align:center;line-height:1.2;
+    color:#414754;background:#fff;min-width:58px;
+  }
+  .severity-option label:hover{border-color:#0059bb;color:#0059bb;background:#f0f5ff;}
+  .severity-option input:checked + label{
+    border-color:#0059bb;background:#0059bb;color:#fff;
+  }
+  .severity-option label .dot{
+    width:8px;height:8px;border-radius:50%;background:currentColor;opacity:0.5;
+    margin-bottom:2px;
+  }
+  .severity-option input:checked + label .dot{opacity:1;}
+
+  /* Binary yes/no */
+  .yesno-option input{display:none;}
+  .yesno-option label{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 24px;border-radius:12px;border:1.5px solid #c1c6d7;
+    cursor:pointer;transition:all .15s;font-family:'Manrope',sans-serif;
+    font-weight:600;font-size:14px;color:#414754;background:#fff;
+  }
+  .yesno-option label:hover{border-color:#0059bb;color:#0059bb;background:#f0f5ff;}
+  .yesno-option input:checked + label{border-color:#0059bb;background:#0059bb;color:#fff;}
+
+  /* Progress bar */
+  #progress-fill{transition:width .4s ease;}
+
+  /* Result bars */
+  .result-bar-fill{height:8px;border-radius:4px;transition:width 1s ease .3s;}
+
+  /* Crisis box */
+  .crisis-box{background:#fef2f2;border:1.5px solid #fca5a5;border-radius:12px;padding:16px 20px;}
+
+  /* Symptom card selection state */
+  .symptom-card.answered{border-color:#0059bb!important;}
+
+  /* Scroll behaviour */
+  html{scroll-behavior:smooth;}
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen">
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl border-b border-outline-variant/10">
+  <div class="flex justify-between items-center max-w-4xl mx-auto px-6 h-16">
+    <a href="index.html" class="text-xl font-bold tracking-tighter text-slate-900 font-headline">Menostat</a>
+    <a href="index.html" class="flex items-center gap-1.5 text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span>Back to site
+    </a>
+  </div>
+  <!-- Progress bar -->
+  <div class="h-1 bg-outline-variant/20">
+    <div id="progress-fill" class="h-full bg-primary" style="width:0%"></div>
+  </div>
+</header>
+
+<main class="pt-16 min-h-screen">
+<div class="max-w-2xl mx-auto px-4 py-10" id="assessment-container">
+
+  <!-- ════════════════════════════════════ -->
+  <!-- STEP 0 — WELCOME                    -->
+  <!-- ════════════════════════════════════ -->
+  <div class="step active" id="step-0">
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 w-fit mx-auto mb-6">
+        <span class="material-symbols-outlined text-[16px]">verified</span>
+        <span class="text-[10px] font-bold tracking-widest uppercase">Clinically Validated</span>
+      </div>
+      <h1 class="font-headline font-extrabold text-3xl md:text-4xl text-on-surface tracking-tight mb-4">Your Free Symptom Assessment</h1>
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-lg mx-auto">Understand where you are in your hormonal journey. This assessment is built on the Menopause Rating Scale — the standard tool used by the Indian Menopause Society.</p>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mb-8">
+      <div class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/20 text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-2 block">schedule</span>
+        <p class="font-headline font-bold text-sm text-on-surface mb-1">8–12 minutes</p>
+        <p class="text-xs text-on-surface-variant">At your own pace</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/20 text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-2 block">encrypted</span>
+        <p class="font-headline font-bold text-sm text-on-surface mb-1">Private</p>
+        <p class="text-xs text-on-surface-variant">Your data is protected</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/20 text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-2 block">person_check</span>
+        <p class="font-headline font-bold text-sm text-on-surface mb-1">Personalised</p>
+        <p class="text-xs text-on-surface-variant">Results for you</p>
+      </div>
+    </div>
+    <div class="bg-primary/8 border border-primary/15 rounded-xl p-4 mb-8 flex items-start gap-3">
+      <span class="material-symbols-outlined text-primary text-lg mt-0.5 shrink-0">info</span>
+      <p class="text-sm text-on-surface-variant leading-relaxed">This tool screens for symptoms — it does not diagnose or prescribe. Results are shared with a Menostat specialist who will review your profile before any treatment is discussed.</p>
+    </div>
+    <button onclick="goToStep(1)" class="w-full bg-primary text-on-primary py-4 rounded-xl font-headline font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20">
+      Begin Assessment <span class="material-symbols-outlined align-middle ml-1">arrow_forward</span>
+    </button>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- STEP 1 — ABOUT YOU                  -->
+  <!-- ════════════════════════════════════ -->
+  <div class="step" id="step-1">
+    <div class="mb-8">
+      <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Section 1 of 4 — About You</p>
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-surface mb-2">A little about you</h2>
+      <p class="text-on-surface-variant text-sm">This helps us personalise your results.</p>
+    </div>
+
+    <div class="flex flex-col gap-5">
+      <!-- Name -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <label class="block font-headline font-semibold text-sm text-on-surface mb-3">What should we call you?</label>
+        <input id="q-name" type="text" placeholder="Your first name" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface text-on-surface text-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"/>
+      </div>
+
+      <!-- Age -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <label class="block font-headline font-semibold text-sm text-on-surface mb-3">How old are you?</label>
+        <input id="q-age" type="number" min="25" max="75" placeholder="e.g. 44" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface text-on-surface text-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"/>
+      </div>
+
+      <!-- Last period -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <label class="block font-headline font-semibold text-sm text-on-surface mb-4">When was your last period?</label>
+        <div class="flex flex-col gap-2" id="q-last-period">
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="last-period" value="regular" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">Still regular (within the last month)</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="last-period" value="irregular" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">Irregular — skipping or changing</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="last-period" value="3-12-months" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">3 to 12 months ago</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="last-period" value="more-than-12-months" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">More than 12 months ago</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="last-period" value="hysterectomy" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">I've had a hysterectomy</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="last-period" value="on-contraception" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">I'm on hormonal contraception (periods suppressed)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Symptoms changed how long -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <label class="block font-headline font-semibold text-sm text-on-surface mb-4">How long have you been noticing changes or symptoms?</label>
+        <div class="flex flex-col gap-2" id="q-symptom-duration">
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="symptom-duration" value="less-3-months" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">Less than 3 months</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="symptom-duration" value="3-12-months" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">3 to 12 months</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="symptom-duration" value="1-3-years" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">1 to 3 years</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="symptom-duration" value="more-3-years" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">More than 3 years</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="symptom-duration" value="not-sure" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">Not sure</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex gap-3 mt-8">
+      <button onclick="goToStep(0)" class="flex-none px-6 py-3.5 rounded-xl border border-outline-variant font-headline font-bold text-sm text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+        <span class="material-symbols-outlined align-middle text-[18px]">arrow_back</span>
+      </button>
+      <button onclick="validateAndGo(1, 2)" class="flex-1 bg-primary text-on-primary py-3.5 rounded-xl font-headline font-bold text-base hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20">
+        Continue <span class="material-symbols-outlined align-middle ml-1">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- STEP 2 — MRS SYMPTOMS               -->
+  <!-- ════════════════════════════════════ -->
+  <div class="step" id="step-2">
+    <div class="mb-8">
+      <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Section 2 of 4 — Your Symptoms</p>
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-surface mb-2">How have you been feeling?</h2>
+      <p class="text-on-surface-variant text-sm leading-relaxed">For each symptom below, select how much it has bothered you <strong>over the past 4 weeks</strong>. Be honest — there are no wrong answers.</p>
+    </div>
+
+    <!-- MRS Items -->
+    <div class="flex flex-col gap-4" id="mrs-items">
+    </div>
+
+    <div class="flex gap-3 mt-8">
+      <button onclick="goToStep(1)" class="flex-none px-6 py-3.5 rounded-xl border border-outline-variant font-headline font-bold text-sm text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+        <span class="material-symbols-outlined align-middle text-[18px]">arrow_back</span>
+      </button>
+      <button onclick="validateAndGo(2, 3)" class="flex-1 bg-primary text-on-primary py-3.5 rounded-xl font-headline font-bold text-base hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20">
+        Continue <span class="material-symbols-outlined align-middle ml-1">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- STEP 3 — SAFETY SCREENING           -->
+  <!-- ════════════════════════════════════ -->
+  <div class="step" id="step-3">
+    <div class="mb-8">
+      <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Section 3 of 4 — Health Background</p>
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-surface mb-2">A few important health questions</h2>
+      <p class="text-on-surface-variant text-sm leading-relaxed">These help our specialists understand what treatments would be safe and appropriate for you. All information is confidential.</p>
+    </div>
+
+    <div class="flex flex-col gap-4">
+
+      <!-- Absolute CI questions -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 overflow-hidden">
+        <div class="px-6 py-4 border-b border-outline-variant/15 bg-surface-container-low/50">
+          <p class="font-headline font-bold text-sm text-on-surface">Have you ever been diagnosed with any of the following?</p>
+          <p class="text-xs text-on-surface-variant mt-1">Select all that apply</p>
+        </div>
+        <div class="px-6 py-4 flex flex-col gap-3" id="ci-checklist">
+        </div>
+      </div>
+
+      <!-- Unexplained bleeding -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <label class="block font-headline font-semibold text-sm text-on-surface mb-4">Are you currently experiencing any unexplained vaginal bleeding?</label>
+        <div class="flex gap-3">
+          <div class="yesno-option flex-1">
+            <input type="radio" name="unexplained-bleeding" id="ub-no" value="no">
+            <label for="ub-no"><span class="material-symbols-outlined text-[18px]">check_circle</span> No</label>
+          </div>
+          <div class="yesno-option flex-1">
+            <input type="radio" name="unexplained-bleeding" id="ub-yes" value="yes">
+            <label for="ub-yes"><span class="material-symbols-outlined text-[18px]">report</span> Yes</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregnancy -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <label class="block font-headline font-semibold text-sm text-on-surface mb-4">Is there any possibility you could be pregnant?</label>
+        <div class="flex gap-3">
+          <div class="yesno-option flex-1">
+            <input type="radio" name="pregnancy" id="preg-no" value="no">
+            <label for="preg-no"><span class="material-symbols-outlined text-[18px]">check_circle</span> No</label>
+          </div>
+          <div class="yesno-option flex-1">
+            <input type="radio" name="pregnancy" id="preg-yes" value="yes">
+            <label for="preg-yes"><span class="material-symbols-outlined text-[18px]">report</span> Possibly</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk factors -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 overflow-hidden">
+        <div class="px-6 py-4 border-b border-outline-variant/15 bg-surface-container-low/50">
+          <p class="font-headline font-bold text-sm text-on-surface">Do any of these apply to you?</p>
+          <p class="text-xs text-on-surface-variant mt-1">These are not disqualifying — they help us tailor your care</p>
+        </div>
+        <div class="px-6 py-4 flex flex-col gap-3" id="rf-checklist">
+        </div>
+      </div>
+
+      <!-- Thyroid -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <label class="block font-headline font-semibold text-sm text-on-surface mb-1">Have you ever been tested for thyroid disease?</label>
+        <p class="text-xs text-on-surface-variant mb-4">Thyroid symptoms closely overlap with menopause symptoms and must be considered</p>
+        <div class="flex flex-col gap-2" id="q-thyroid">
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="thyroid" value="normal" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">Yes — results were normal</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="thyroid" value="treated" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">Yes — I'm on thyroid medication</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="thyroid" value="not-tested" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">No — I haven't been tested</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="thyroid" value="not-sure" class="accent-primary"> <span class="text-sm font-semibold text-on-surface">Not sure</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex gap-3 mt-8">
+      <button onclick="goToStep(2)" class="flex-none px-6 py-3.5 rounded-xl border border-outline-variant font-headline font-bold text-sm text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+        <span class="material-symbols-outlined align-middle text-[18px]">arrow_back</span>
+      </button>
+      <button onclick="validateAndGo(3, 4)" class="flex-1 bg-primary text-on-primary py-3.5 rounded-xl font-headline font-bold text-base hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20">
+        Continue <span class="material-symbols-outlined align-middle ml-1">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- STEP 4 — ADAPTIVE FOLLOW-UPS        -->
+  <!-- ════════════════════════════════════ -->
+  <div class="step" id="step-4">
+    <div class="mb-8">
+      <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Section 4 of 4 — A Bit More Detail</p>
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-surface mb-2">A few more questions</h2>
+      <p class="text-on-surface-variant text-sm leading-relaxed">Based on your responses, we'd like to understand a few areas more deeply. This helps us create a more accurate picture for your specialist.</p>
+    </div>
+
+    <div class="flex flex-col gap-5" id="adaptive-modules">
+      <!-- Populated by JS based on MRS scores -->
+    </div>
+
+    <div class="flex gap-3 mt-8">
+      <button onclick="goToStep(3)" class="flex-none px-6 py-3.5 rounded-xl border border-outline-variant font-headline font-bold text-sm text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+        <span class="material-symbols-outlined align-middle text-[18px]">arrow_back</span>
+      </button>
+      <button onclick="showResults()" class="flex-1 bg-primary text-on-primary py-3.5 rounded-xl font-headline font-bold text-base hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20">
+        See My Results <span class="material-symbols-outlined align-middle ml-1">insights</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- STEP 5 — HARD STOP (CONTRAINDICATED) -->
+  <!-- ════════════════════════════════════ -->
+  <div class="step" id="step-5">
+    <div class="text-center mb-8">
+      <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <span class="material-symbols-outlined text-amber-600 text-3xl">health_and_safety</span>
+      </div>
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-surface mb-4">Your profile needs in-person assessment</h2>
+      <p class="text-on-surface-variant text-base leading-relaxed max-w-lg mx-auto">Based on your responses, there are aspects of your health history that require an in-person evaluation before any hormonal treatment can be considered. This is to protect your safety.</p>
+    </div>
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6 mb-8">
+      <p class="font-headline font-bold text-sm text-on-surface mb-3">What to do next</p>
+      <div class="flex flex-col gap-3">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-xl shrink-0 mt-0.5">check_circle</span>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Ask your GP or gynecologist for a referral to a menopause specialist or endocrinologist.</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-xl shrink-0 mt-0.5">check_circle</span>
+          <p class="text-sm text-on-surface-variant leading-relaxed">You are still likely experiencing perimenopause or menopause symptoms — they can be managed safely with the right medical support.</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-xl shrink-0 mt-0.5">check_circle</span>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Non-hormonal options are available for many symptoms and can be discussed in person.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a href="faq.html" class="w-full text-center bg-surface-container-lowest text-primary border border-primary py-3.5 rounded-xl font-headline font-bold text-base hover:bg-primary hover:text-white transition-colors">
+        Read our FAQs &amp; Resources
+      </a>
+      <a href="index.html" class="w-full text-center text-on-surface-variant text-sm py-2 hover:text-primary transition-colors">
+        Return to home
+      </a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- STEP 6 — RESULTS                    -->
+  <!-- ════════════════════════════════════ -->
+  <div class="step" id="step-6">
+    <!-- Populated entirely by JS -->
+  </div>
+
+</div>
+</main>
+
+<script>
+// ═══════════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════════
+
+const MRS_ITEMS = [
+  { id: 'mrs1', label: 'Hot flushes & sweating', desc: 'Episodes of sudden heat, flushing, sweating', subscale: 'somatic' },
+  { id: 'mrs2', label: 'Heart discomfort', desc: 'Heart skipping, racing, fluttering, or tightness', subscale: 'somatic' },
+  { id: 'mrs3', label: 'Sleep problems', desc: 'Difficulty falling asleep, waking in the night, waking early', subscale: 'somatic' },
+  { id: 'mrs4', label: 'Depressive mood', desc: 'Feeling down, sad, tearful, lacking drive', subscale: 'psychological' },
+  { id: 'mrs5', label: 'Irritability', desc: 'Feeling nervous, inner tension, easily frustrated', subscale: 'psychological' },
+  { id: 'mrs6', label: 'Anxiety', desc: 'Inner restlessness, feeling panicky or on edge', subscale: 'psychological' },
+  { id: 'mrs7', label: 'Physical & mental exhaustion', desc: 'Low energy, impaired memory, difficulty concentrating', subscale: 'psychological' },
+  { id: 'mrs8', label: 'Sexual changes', desc: 'Changes in desire, activity, or satisfaction', subscale: 'urogenital' },
+  { id: 'mrs9', label: 'Bladder & urinary issues', desc: 'Urgency, frequency, leakage, or discomfort', subscale: 'urogenital' },
+  { id: 'mrs10', label: 'Vaginal dryness', desc: 'Dryness, burning, or discomfort during intercourse', subscale: 'urogenital' },
+  { id: 'mrs11', label: 'Joint & muscle pain', desc: 'Aching joints, stiffness, muscle discomfort', subscale: 'somatic' }
+];
+
+const SEVERITY_LABELS = [
+  { val: 0, label: 'None', color: '#717786' },
+  { val: 1, label: 'Mild', color: '#0059bb' },
+  { val: 2, label: 'Moderate', color: '#0059bb' },
+  { val: 3, label: 'Severe', color: '#b45309' },
+  { val: 4, label: 'Very Severe', color: '#dc2626' }
+];
+
+const CI_ITEMS = [
+  { id: 'ci-breast-cancer', label: 'Breast cancer (current, past, or suspected)' },
+  { id: 'ci-uterine-cancer', label: 'Uterine or endometrial cancer' },
+  { id: 'ci-other-hrsn-cancer', label: 'Any other hormone-sensitive cancer' },
+  { id: 'ci-endometrial-hyperplasia', label: 'Endometrial hyperplasia (untreated)' },
+  { id: 'ci-dvt-pe', label: 'Blood clot in the leg (DVT) or lungs (PE)' },
+  { id: 'ci-clotting-disorder', label: 'Diagnosed clotting disorder (e.g. Factor V Leiden)' },
+  { id: 'ci-heart-attack', label: 'Heart attack, angina, or coronary artery disease' },
+  { id: 'ci-stroke-tia', label: 'Stroke or TIA (mini-stroke)' },
+  { id: 'ci-liver-disease', label: 'Active liver disease with abnormal liver function' },
+  { id: 'ci-porphyria', label: 'Porphyria' },
+  { id: 'ci-none', label: 'None of the above', exclusive: true }
+];
+
+const RF_ITEMS = [
+  { id: 'rf-family-breast', label: 'First-degree family member with breast cancer' },
+  { id: 'rf-migraine-aura', label: 'Migraines with visual aura' },
+  { id: 'rf-diabetes', label: 'Diabetes (Type 1 or 2)' },
+  { id: 'rf-hypertension', label: 'High blood pressure' },
+  { id: 'rf-high-cholesterol', label: 'High cholesterol or triglycerides' },
+  { id: 'rf-gallbladder', label: 'Gallbladder disease or gallstones' },
+  { id: 'rf-fibroids', label: 'Uterine fibroids' },
+  { id: 'rf-endometriosis', label: 'Endometriosis' },
+  { id: 'rf-obesity', label: 'BMI over 30' },
+  { id: 'rf-autoimmune', label: 'Lupus or another autoimmune condition' },
+  { id: 'rf-none', label: 'None of the above', exclusive: true }
+];
+
+// ═══════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════
+const state = { mrsScores: {}, ciFlags: {}, rfFlags: {} };
+
+// ═══════════════════════════════════════════════════
+// INIT — Build MRS items and checklists
+// ═══════════════════════════════════════════════════
+function init() {
+  buildMRS();
+  buildChecklist('ci-checklist', CI_ITEMS, 'ci');
+  buildChecklist('rf-checklist', RF_ITEMS, 'rf');
+}
+
+function buildMRS() {
+  const container = document.getElementById('mrs-items');
+  MRS_ITEMS.forEach((item, idx) => {
+    const card = document.createElement('div');
+    card.className = 'symptom-card bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-5 transition-colors';
+    card.id = `card-${item.id}`;
+    card.innerHTML = `
+      <div class="mb-4">
+        <p class="font-headline font-bold text-[15px] text-on-surface">${item.label}</p>
+        <p class="text-xs text-on-surface-variant mt-0.5">${item.desc}</p>
+      </div>
+      <div class="flex gap-2 flex-wrap">
+        ${SEVERITY_LABELS.map(s => `
+          <div class="severity-option">
+            <input type="radio" name="${item.id}" id="${item.id}-${s.val}" value="${s.val}" onchange="onMrsChange('${item.id}', ${s.val}, '${item.subscale}')">
+            <label for="${item.id}-${s.val}">
+              <div class="dot"></div>
+              ${s.label}
+            </label>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function buildChecklist(containerId, items, prefix) {
+  const container = document.getElementById(containerId);
+  items.forEach(item => {
+    const div = document.createElement('div');
+    div.innerHTML = `
+      <label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5" id="label-${item.id}">
+        <input type="checkbox" id="${item.id}" name="${prefix}-item" value="${item.id}" onchange="onChecklistChange('${item.id}', '${prefix}', ${!!item.exclusive})" class="accent-primary w-4 h-4 shrink-0">
+        <span class="text-sm font-semibold text-on-surface">${item.label}</span>
+      </label>
+    `;
+    container.appendChild(div);
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// EVENT HANDLERS
+// ═══════════════════════════════════════════════════
+function onMrsChange(itemId, score, subscale) {
+  state.mrsScores[itemId] = { score, subscale };
+  document.getElementById(`card-${itemId}`).classList.add('answered');
+}
+
+function onChecklistChange(itemId, prefix, isExclusive) {
+  if (isExclusive) {
+    // Uncheck all others
+    document.querySelectorAll(`input[name="${prefix}-item"]`).forEach(cb => {
+      if (cb.value !== itemId) cb.checked = false;
+    });
+  } else {
+    // Uncheck the "none" option
+    const noneEl = document.getElementById(`${prefix}-none`);
+    if (noneEl) noneEl.checked = false;
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════════
+function goToStep(n) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById(`step-${n}`).classList.add('active');
+  updateProgress(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(step) {
+  // Steps: 0=welcome(0%), 1=about(15%), 2=symptoms(35%), 3=safety(60%), 4=adaptive(80%), 6=results(100%)
+  const pct = [0, 15, 35, 60, 80, 100, 100];
+  document.getElementById('progress-fill').style.width = (pct[step] || 0) + '%';
+}
+
+function validateAndGo(fromStep, toStep) {
+  // Basic validation
+  if (fromStep === 1) {
+    if (!document.querySelector('input[name="last-period"]:checked')) {
+      alert('Please tell us about your last period.');
+      return;
+    }
+    if (!document.querySelector('input[name="symptom-duration"]:checked')) {
+      alert('Please tell us how long you\'ve been experiencing changes.');
+      return;
+    }
+  }
+  if (fromStep === 2) {
+    const answered = Object.keys(state.mrsScores).length;
+    if (answered < MRS_ITEMS.length) {
+      alert(`Please answer all ${MRS_ITEMS.length} symptom questions. You've answered ${answered} so far.`);
+      return;
+    }
+  }
+  if (fromStep === 3) {
+    // Check for absolute contraindications
+    const hasAbsoluteCI = checkAbsoluteContraindications();
+    if (hasAbsoluteCI) {
+      goToStep(5);
+      return;
+    }
+    // Build adaptive modules before showing step 4
+    buildAdaptiveModules();
+    const container = document.getElementById('adaptive-modules');
+    if (container.children.length === 0) {
+      // No adaptive modules needed — go straight to results
+      showResults();
+      return;
+    }
+  }
+  goToStep(toStep);
+}
+
+function checkAbsoluteContraindications() {
+  const absoluteCIs = ['ci-breast-cancer','ci-uterine-cancer','ci-other-hrsn-cancer',
+    'ci-endometrial-hyperplasia','ci-dvt-pe','ci-clotting-disorder','ci-heart-attack',
+    'ci-stroke-tia','ci-liver-disease','ci-porphyria'];
+  for (const id of absoluteCIs) {
+    if (document.getElementById(id)?.checked) return true;
+  }
+  if (document.getElementById('ub-yes')?.checked) return true;
+  if (document.getElementById('preg-yes')?.checked) return true;
+  return false;
+}
+
+// ═══════════════════════════════════════════════════
+// ADAPTIVE MODULES
+// ═══════════════════════════════════════════════════
+function getMrsSubscores() {
+  let somatic = 0, psychological = 0, urogenital = 0;
+  for (const [key, val] of Object.entries(state.mrsScores)) {
+    if (val.subscale === 'somatic') somatic += val.score;
+    else if (val.subscale === 'psychological') psychological += val.score;
+    else if (val.subscale === 'urogenital') urogenital += val.score;
+  }
+  return { somatic, psychological, urogenital,
+    total: somatic + psychological + urogenital,
+    sleep: state.mrsScores['mrs3']?.score ?? 0,
+    cognitive: state.mrsScores['mrs7']?.score ?? 0,
+    musculo: state.mrsScores['mrs11']?.score ?? 0,
+    hotFlush: state.mrsScores['mrs1']?.score ?? 0
+  };
+}
+
+function buildAdaptiveModules() {
+  const container = document.getElementById('adaptive-modules');
+  container.innerHTML = '';
+  const s = getMrsSubscores();
+
+  // VMS module: somatic ≥5 or hot flush ≥2
+  if (s.somatic >= 5 || s.hotFlush >= 2) {
+    container.innerHTML += `
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-lg">thermostat</span>
+          </div>
+          <p class="font-headline font-bold text-sm text-on-surface">Hot flushes & night sweats</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div>
+            <p class="text-sm font-semibold text-on-surface mb-2">How many hot flushes do you typically experience per day?</p>
+            <div class="flex flex-col gap-1.5">
+              ${['1 to 3','4 to 6','7 to 10','More than 10'].map((o,i) => `
+                <label class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+                  <input type="radio" name="vms-freq" value="${i}" class="accent-primary"> <span class="text-sm text-on-surface">${o}</span>
+                </label>`).join('')}
+            </div>
+          </div>
+          <div class="mt-2">
+            <p class="text-sm font-semibold text-on-surface mb-2">Do night sweats wake you up?</p>
+            <div class="flex gap-3">
+              <label class="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+                <input type="radio" name="night-sweats-wake" value="no" class="accent-primary"> <span class="text-sm font-semibold">Rarely or never</span>
+              </label>
+              <label class="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+                <input type="radio" name="night-sweats-wake" value="sometimes" class="accent-primary"> <span class="text-sm font-semibold">Sometimes</span>
+              </label>
+              <label class="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+                <input type="radio" name="night-sweats-wake" value="often" class="accent-primary"> <span class="text-sm font-semibold">Most nights</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // Sleep module: sleep item ≥2
+  if (s.sleep >= 2) {
+    container.innerHTML += `
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-lg">bedtime</span>
+          </div>
+          <p class="font-headline font-bold text-sm text-on-surface">Sleep</p>
+        </div>
+        <p class="text-sm font-semibold text-on-surface mb-2">What best describes your sleep difficulty?</p>
+        <div class="flex flex-col gap-1.5">
+          ${['Difficulty falling asleep','Waking frequently during the night','Waking too early and unable to return to sleep','Sleep feels unrefreshing even when I get enough hours','All of the above'].map((o,i) => `
+            <label class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="radio" name="sleep-type" value="${i}" class="accent-primary"> <span class="text-sm text-on-surface">${o}</span>
+            </label>`).join('')}
+        </div>
+        <p class="text-sm font-semibold text-on-surface mt-4 mb-2">On average, how many nights a week is your sleep significantly disrupted?</p>
+        <div class="flex gap-2 flex-wrap">
+          ${['1–2','3–4','5–6','Every night'].map((o,i) => `
+            <label class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant cursor-pointer hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary has-[:checked]:text-white text-sm font-semibold text-on-surface">
+              <input type="radio" name="sleep-freq" value="${i}" class="sr-only"> ${o}
+            </label>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  // Mood module: psychological ≥4
+  if (s.psychological >= 4) {
+    container.innerHTML += `
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-lg">mood</span>
+          </div>
+          <p class="font-headline font-bold text-sm text-on-surface">Mood & emotional wellbeing</p>
+        </div>
+        <p class="text-xs text-on-surface-variant mb-4">Over the <strong>last 2 weeks</strong>, how often have you been bothered by the following?</p>
+        <div class="flex flex-col gap-5">
+          <div>
+            <p class="text-sm font-semibold text-on-surface mb-2">Little interest or pleasure in doing things</p>
+            <div class="flex gap-2 flex-wrap">
+              ${['Not at all','Several days','More than half the days','Nearly every day'].map((o,i) => `
+                <label class="flex items-center gap-2 px-3 py-2 rounded-full border border-outline-variant cursor-pointer hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary has-[:checked]:text-white text-xs font-semibold text-on-surface">
+                  <input type="radio" name="phq2-1" value="${i}" class="sr-only"> ${o}
+                </label>`).join('')}
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-on-surface mb-2">Feeling down, depressed, or hopeless</p>
+            <div class="flex gap-2 flex-wrap">
+              ${['Not at all','Several days','More than half the days','Nearly every day'].map((o,i) => `
+                <label class="flex items-center gap-2 px-3 py-2 rounded-full border border-outline-variant cursor-pointer hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary has-[:checked]:text-white text-xs font-semibold text-on-surface">
+                  <input type="radio" name="phq2-2" value="${i}" class="sr-only"> ${o}
+                </label>`).join('')}
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-on-surface mb-2">Feeling nervous, anxious, or on edge</p>
+            <div class="flex gap-2 flex-wrap">
+              ${['Not at all','Several days','More than half the days','Nearly every day'].map((o,i) => `
+                <label class="flex items-center gap-2 px-3 py-2 rounded-full border border-outline-variant cursor-pointer hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary has-[:checked]:text-white text-xs font-semibold text-on-surface">
+                  <input type="radio" name="gad2-1" value="${i}" class="sr-only"> ${o}
+                </label>`).join('')}
+            </div>
+          </div>
+          <!-- PHQ-9 Q9 safety gate — always shown when mood module appears -->
+          <div class="crisis-box">
+            <p class="text-sm font-semibold text-on-surface mb-2">Thoughts of being better off not being here, or of harming yourself?</p>
+            <p class="text-xs text-on-surface-variant mb-3">Please answer honestly. This does not affect your access to care.</p>
+            <div class="flex gap-3">
+              <label class="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5" id="phq9q9-label">
+                <input type="radio" name="phq9-q9" value="no" id="phq9-q9-no" class="accent-primary" onchange="handleCrisisQ('no')"> <span class="text-sm font-semibold">No, not at all</span>
+              </label>
+              <label class="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border border-red-300 bg-red-50 cursor-pointer has-[:checked]:border-red-500 has-[:checked]:bg-red-100">
+                <input type="radio" name="phq9-q9" value="yes" id="phq9-q9-yes" class="accent-red-600" onchange="handleCrisisQ('yes')"> <span class="text-sm font-semibold text-red-700">Sometimes or often</span>
+              </label>
+            </div>
+            <div id="crisis-resources" class="hidden mt-4 p-4 bg-red-50 border border-red-200 rounded-xl">
+              <p class="font-headline font-bold text-sm text-red-700 mb-2">If you are in distress, please reach out now:</p>
+              <p class="text-sm text-red-700"><strong>iCall (India):</strong> 9152987821</p>
+              <p class="text-sm text-red-700"><strong>Vandrevala Foundation:</strong> 1860-2662-345 (24/7)</p>
+              <p class="text-xs text-red-600 mt-2">You can continue the assessment and still speak with our specialist. You are not alone.</p>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // GSM module: urogenital ≥2
+  if (s.urogenital >= 2) {
+    container.innerHTML += `
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-lg">healing</span>
+          </div>
+          <p class="font-headline font-bold text-sm text-on-surface">Vaginal & urinary health</p>
+        </div>
+        <p class="text-xs text-on-surface-variant mb-4">These symptoms are very common and highly treatable. Your answers are completely private.</p>
+        <p class="text-sm font-semibold text-on-surface mb-2">Which of these affects you most? (Select one)</p>
+        <div class="flex flex-col gap-1.5">
+          ${['Vaginal dryness or irritation in daily life','Discomfort or pain during intercourse','Urgency or leakage of urine','Recurrent urinary infections','All of these equally'].map((o,i) => `
+            <label class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="radio" name="gsm-primary" value="${i}" class="accent-primary"> <span class="text-sm text-on-surface">${o}</span>
+            </label>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  // Cognitive module: item 7 ≥2
+  if (s.cognitive >= 2) {
+    container.innerHTML += `
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-lg">psychology</span>
+          </div>
+          <p class="font-headline font-bold text-sm text-on-surface">Memory & concentration</p>
+        </div>
+        <p class="text-sm font-semibold text-on-surface mb-2">What best describes the cognitive changes you notice?</p>
+        <div class="flex flex-col gap-1.5">
+          ${['Forgetting words mid-sentence or losing my train of thought','Forgetting appointments, names, or recent events','Difficulty concentrating on tasks or reading','Feeling mentally slower than I used to be','A combination of all of these'].map((o,i) => `
+            <label class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="radio" name="cognitive-type" value="${i}" class="accent-primary"> <span class="text-sm text-on-surface">${o}</span>
+            </label>`).join('')}
+        </div>
+        <p class="text-sm font-semibold text-on-surface mt-4 mb-2">Does your brain fog fluctuate day to day, or feel constant?</p>
+        <div class="flex gap-3">
+          <label class="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="cognitive-pattern" value="fluctuates" class="accent-primary"> <span class="text-sm font-semibold">It comes and goes</span>
+          </label>
+          <label class="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="cognitive-pattern" value="constant" class="accent-primary"> <span class="text-sm font-semibold">It's fairly constant</span>
+          </label>
+        </div>
+      </div>`;
+  }
+
+  // MSK module: item 11 ≥2
+  if (s.musculo >= 2) {
+    container.innerHTML += `
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-lg">accessibility</span>
+          </div>
+          <p class="font-headline font-bold text-sm text-on-surface">Joints & muscles</p>
+        </div>
+        <p class="text-sm font-semibold text-on-surface mb-2">How would you describe your joint and muscle pain?</p>
+        <div class="flex flex-col gap-1.5">
+          ${['It moves around — different joints on different days','Fixed in one or two specific joints','Generalised muscle aching rather than joint pain','Both migratory and fixed areas'].map((o,i) => `
+            <label class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="radio" name="msk-pattern" value="${i}" class="accent-primary"> <span class="text-sm text-on-surface">${o}</span>
+            </label>`).join('')}
+        </div>
+        <p class="text-sm font-semibold text-on-surface mt-4 mb-2">When did this pain begin?</p>
+        <div class="flex flex-col gap-1.5">
+          ${['Around the same time as my other symptoms','Before my other symptoms','After my other symptoms','I\'m not sure'].map((o,i) => `
+            <label class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="radio" name="msk-onset" value="${i}" class="accent-primary"> <span class="text-sm text-on-surface">${o}</span>
+            </label>`).join('')}
+        </div>
+      </div>`;
+  }
+}
+
+function handleCrisisQ(val) {
+  document.getElementById('crisis-resources').classList.toggle('hidden', val === 'no');
+}
+
+// ═══════════════════════════════════════════════════
+// RESULTS
+// ═══════════════════════════════════════════════════
+function showResults() {
+  const name = document.getElementById('q-name')?.value?.trim() || 'there';
+  const lastPeriod = document.querySelector('input[name="last-period"]:checked')?.value;
+  const s = getMrsSubscores();
+
+  // Determine result category
+  let category;
+  const isComplex = lastPeriod === 'hysterectomy' || lastPeriod === 'on-contraception';
+  const isPostMeno = lastPeriod === 'more-than-12-months';
+
+  if (isComplex) {
+    category = 'complex';
+  } else if (isPostMeno && s.urogenital >= 2) {
+    category = 'postmenopause';
+  } else if (s.total >= 16) {
+    category = 'significant';
+  } else if (s.total >= 9) {
+    category = 'active';
+  } else {
+    category = 'early';
+  }
+
+  const CATEGORIES = {
+    early: {
+      badge: 'Early Hormonal Changes',
+      badgeColor: 'bg-secondary/10 text-secondary border-secondary/20',
+      headline: `Hi ${name}, your body is beginning a natural hormonal shift.`,
+      body: `Your symptom profile is mild at this stage. Many women find this is an ideal time to understand what's ahead and put simple strategies in place — before symptoms become more disruptive. You don't need to wait until things feel worse to speak with a specialist.`,
+      urgency: 'moderate',
+      cta: 'Book a Free Consultation',
+      ctaNote: 'A specialist can help you stay ahead of what\'s coming.',
+      thyroidNote: true
+    },
+    active: {
+      badge: 'Active Perimenopause',
+      badgeColor: 'bg-primary/10 text-primary border-primary/20',
+      headline: `Hi ${name}, you're in the active perimenopause transition.`,
+      body: `Your symptoms are consistent with perimenopause — a phase that can last several years. What you're experiencing is real, has a hormonal explanation, and responds well to treatment. Most women with this symptom profile see meaningful improvement within 4 to 6 weeks of starting the right treatment.`,
+      urgency: 'high',
+      cta: 'Book Your Specialist Consultation',
+      ctaNote: 'Your personalised care plan can be with you within 24 hours.',
+      thyroidNote: true
+    },
+    significant: {
+      badge: 'Significant Hormonal Transition',
+      badgeColor: 'bg-amber-100 text-amber-700 border-amber-200',
+      headline: `Hi ${name}, your symptoms deserve prompt specialist attention.`,
+      body: `Your symptom profile is significantly impacting your quality of life. This level of hormonal disruption is very treatable — but it rarely resolves on its own. A Menostat specialist will review your full profile and create a personalised plan. You don't have to just live with this.`,
+      urgency: 'high',
+      cta: 'Book Your Specialist Consultation Now',
+      ctaNote: 'Your results have been flagged for priority review.',
+      thyroidNote: true
+    },
+    postmenopause: {
+      badge: 'Post-Menopause Health Optimisation',
+      badgeColor: 'bg-tertiary/10 text-tertiary border-tertiary/20',
+      headline: `Hi ${name}, your health priorities are shifting.`,
+      body: `You're postmenopausal, and the focus now is both managing ongoing symptoms and protecting your long-term health. Bone density, cardiovascular health, and genitourinary wellbeing all benefit significantly from the right interventions started now. A specialist can help you understand exactly where you stand.`,
+      urgency: 'high',
+      cta: 'Book Your Health Optimisation Consultation',
+      ctaNote: 'Specialist review of your long-term health profile.',
+      thyroidNote: false
+    },
+    complex: {
+      badge: 'Personalised Assessment Needed',
+      badgeColor: 'bg-primary/10 text-primary border-primary/20',
+      headline: `Hi ${name}, your situation needs personalised assessment.`,
+      body: `Your health history includes factors that make it especially important to have a one-to-one conversation with a menopause specialist. A standard assessment can't fully account for your situation — but a specialist can. The good news is there are very likely effective options for you.`,
+      urgency: 'moderate',
+      cta: 'Book a Specialist Consultation',
+      ctaNote: 'Our doctors understand complex hormonal profiles.',
+      thyroidNote: false
+    }
+  };
+
+  const cat = CATEGORIES[category];
+  const thyroidNote = document.querySelector('input[name="thyroid"][value="not-tested"]')?.checked;
+
+  // Symptom cluster bars
+  const somPct = Math.round((s.somatic / 16) * 100);
+  const psyPct = Math.round((s.psychological / 16) * 100);
+  const uroGPct = Math.round((s.urogenital / 12) * 100);
+
+  function barColor(pct) {
+    if (pct >= 75) return '#dc2626';
+    if (pct >= 45) return '#b45309';
+    if (pct >= 20) return '#0059bb';
+    return '#006b5c';
+  }
+  function barLabel(pct) {
+    if (pct >= 75) return 'Significant';
+    if (pct >= 45) return 'Moderate';
+    if (pct >= 20) return 'Mild';
+    return 'Minimal';
+  }
+
+  const urgentCTA = cat.urgency === 'high';
+
+  const resultsHTML = `
+    <div class="text-center mb-8">
+      <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+        <span class="material-symbols-outlined text-primary text-3xl">insights</span>
+      </div>
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border ${cat.badgeColor} mb-4">
+        <span class="text-[11px] font-bold tracking-widest uppercase">${cat.badge}</span>
+      </div>
+      <h2 class="font-headline font-extrabold text-2xl md:text-3xl text-on-surface tracking-tight mb-4">${cat.headline}</h2>
+      <p class="text-on-surface-variant text-base leading-relaxed max-w-lg mx-auto">${cat.body}</p>
+    </div>
+
+    <!-- Symptom Profile -->
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6 mb-5">
+      <p class="font-headline font-bold text-sm text-on-surface mb-1">Your symptom profile</p>
+      <p class="text-xs text-on-surface-variant mb-5">How symptoms are distributed across the three main areas</p>
+
+      <div class="flex flex-col gap-5">
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <div>
+              <p class="font-headline font-semibold text-sm text-on-surface">Physical & Vasomotor</p>
+              <p class="text-xs text-on-surface-variant">Hot flushes, sleep, heart, joints</p>
+            </div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background:${barColor(somPct)}20;color:${barColor(somPct)}">${barLabel(somPct)}</span>
+          </div>
+          <div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+            <div class="result-bar-fill" style="width:0%;background:${barColor(somPct)}" data-target="${somPct}"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <div>
+              <p class="font-headline font-semibold text-sm text-on-surface">Mood & Cognitive</p>
+              <p class="text-xs text-on-surface-variant">Mood, anxiety, brain fog, energy</p>
+            </div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background:${barColor(psyPct)}20;color:${barColor(psyPct)}">${barLabel(psyPct)}</span>
+          </div>
+          <div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+            <div class="result-bar-fill" style="width:0%;background:${barColor(psyPct)}" data-target="${psyPct}"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <div>
+              <p class="font-headline font-semibold text-sm text-on-surface">Urogenital</p>
+              <p class="text-xs text-on-surface-variant">Vaginal, bladder, sexual changes</p>
+            </div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background:${barColor(uroGPct)}20;color:${barColor(uroGPct)}">${barLabel(uroGPct)}</span>
+          </div>
+          <div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+            <div class="result-bar-fill" style="width:0%;background:${barColor(uroGPct)}" data-target="${uroGPct}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thyroid note if not tested -->
+    ${thyroidNote ? `
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 flex items-start gap-3">
+      <span class="material-symbols-outlined text-amber-600 text-lg mt-0.5 shrink-0">info</span>
+      <div>
+        <p class="font-headline font-bold text-sm text-amber-800 mb-1">Thyroid check recommended</p>
+        <p class="text-xs text-amber-700 leading-relaxed">You haven't been tested for thyroid disease. Thyroid symptoms overlap significantly with perimenopause symptoms. We'll make sure your specialist discusses a TSH test as part of your assessment.</p>
+      </div>
+    </div>` : ''}
+
+    <!-- What this means -->
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6 mb-5">
+      <p class="font-headline font-bold text-sm text-on-surface mb-3">What happens next</p>
+      <div class="flex flex-col gap-3">
+        <div class="flex items-start gap-3">
+          <div class="w-7 h-7 bg-primary text-white rounded-full flex items-center justify-center font-headline font-bold text-xs shrink-0 mt-0.5">1</div>
+          <div>
+            <p class="font-headline font-semibold text-sm text-on-surface">Your results are reviewed by a Menostat specialist</p>
+            <p class="text-xs text-on-surface-variant mt-0.5">A board-certified gynecologist reviews your full symptom profile before your consultation.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-7 h-7 bg-primary text-white rounded-full flex items-center justify-center font-headline font-bold text-xs shrink-0 mt-0.5">2</div>
+          <div>
+            <p class="font-headline font-semibold text-sm text-on-surface">30-minute video consultation from home</p>
+            <p class="text-xs text-on-surface-variant mt-0.5">No waiting rooms. No repeating your history from scratch.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-7 h-7 bg-primary text-white rounded-full flex items-center justify-center font-headline font-bold text-xs shrink-0 mt-0.5">3</div>
+          <div>
+            <p class="font-headline font-semibold text-sm text-on-surface">Personalised care plan & prescription delivered</p>
+            <p class="text-xs text-on-surface-variant mt-0.5">Medication dispatched discreetly to your door within 24–48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="index.html#pricing" class="block w-full text-center ${urgentCTA ? 'bg-primary shadow-xl shadow-primary/20' : 'bg-primary'} text-on-primary py-4 rounded-xl font-headline font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-transform mb-3">
+      ${cat.cta} <span class="material-symbols-outlined align-middle ml-1">arrow_forward</span>
+    </a>
+    <p class="text-center text-xs text-on-surface-variant mb-8">${cat.ctaNote}</p>
+
+    <div class="border-t border-outline-variant/20 pt-6 text-center">
+      <p class="text-xs text-on-surface-variant leading-relaxed max-w-md mx-auto">This assessment is for informational purposes only and does not constitute a medical diagnosis. Results are reviewed by a qualified specialist before any treatment is recommended.</p>
+    </div>
+  `;
+
+  const resultsStep = document.getElementById('step-6');
+  resultsStep.innerHTML = resultsHTML;
+  goToStep(6);
+
+  // Animate bars
+  setTimeout(() => {
+    document.querySelectorAll('.result-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.target + '%';
+    });
+  }, 300);
+}
+
+// ═══════════════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════════════
+init();
+</script>
+</body>
+</html>

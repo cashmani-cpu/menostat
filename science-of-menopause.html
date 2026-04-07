@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Science of Menopause | Menostat — How Hormonal Shifts Affect Your Body</title>
+<meta name="description" content="How estrogen and progesterone affect your brain, joints, bones, heart, and sleep — explained clearly by the Menostat clinical team for Indian women."/>
+<link rel="canonical" href="https://menostat.com/science-of-menopause.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://menostat.com/science-of-menopause.html"/>
+<meta property="og:title" content="The Science of Menopause | Menostat"/>
+<meta property="og:description" content="How hormonal shifts affect your body, brain, and long-term health — explained by our clinical team."/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary": "#ffffff","surface": "#f7f9fc","surface-container-lowest": "#ffffff",
+          "tertiary": "#4d5d70","surface-container-high": "#e6e8eb","outline": "#717786",
+          "primary": "#0059bb","background": "#f7f9fc","primary-container": "#0070ea",
+          "on-primary-container": "#fefcff","on-secondary": "#ffffff","surface-variant": "#e0e3e6",
+          "surface-container-low": "#f2f4f7","surface-container-highest": "#e0e3e6",
+          "on-tertiary": "#ffffff","on-surface": "#191c1e","primary-fixed-dim": "#adc7ff",
+          "outline-variant": "#c1c6d7","surface-dim": "#d8dadd","on-surface-variant": "#414754",
+          "on-background": "#191c1e","secondary": "#006b5c","surface-container": "#eceef1",
+          "tertiary-container": "#65768a","on-tertiary-container": "#fdfcff"
+        },
+        borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+        fontFamily: {
+          headline: ["Manrope"],
+          body: ["Inter"],
+          label: ["Inter"],
+          article: ["Lora", "Georgia", "serif"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+
+  /* Article typography */
+  .article-body p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.0625rem;
+    line-height: 1.85;
+    color: #2d3133;
+    margin-bottom: 1.5rem;
+  }
+  .article-body h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #191c1e;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  @media (min-width: 768px) {
+    .article-body p { font-size: 1.125rem; }
+    .article-body h2 { font-size: 1.5rem; }
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .section-divider {
+    width: 3rem;
+    height: 2px;
+    background: #0059bb;
+    margin: 2.5rem 0;
+    border-radius: 2px;
+    opacity: 0.4;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    border-left: 3px solid #0059bb;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: rgba(0,89,187,0.04);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .pull-quote p {
+    font-family: 'Lora', Georgia, serif !important;
+    font-style: italic !important;
+    font-size: 1.05rem !important;
+    color: #0059bb !important;
+    margin-bottom: 0 !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Progress / reading indicator */
+  #reading-progress {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: 2px;
+    background: #0059bb;
+    z-index: 60;
+    transition: width 0.1s linear;
+    width: 0%;
+  }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+
+<!-- Reading progress bar -->
+<div id="reading-progress"></div>
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-outline-variant/10">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-slate-900 font-headline">Menostat</a>
+    <div class="hidden md:flex items-center gap-8 font-['Manrope'] font-semibold tracking-tight">
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html">Home</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#how-it-works">How it Works</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#symptoms">Symptoms</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#pricing">Assessment</a>
+      <a class="text-blue-600 font-bold" href="faq.html">Resources</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="index.html#pricing" class="hidden sm:block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide hover:scale-95 duration-150 transition-transform shadow-lg shadow-primary/20">Start Consultation</a>
+      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden flex-col border-t border-outline-variant/10 bg-slate-50/95 backdrop-blur-xl font-['Manrope'] font-semibold">
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html">Home</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#how-it-works">How it Works</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#symptoms">Symptoms</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#pricing">Assessment</a>
+    <a class="px-6 py-4 text-blue-600 font-bold hover:bg-slate-100 transition-colors" href="faq.html">Resources</a>
+  </div>
+  <script>
+    const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('mobile-menu'),bar1=document.getElementById('bar1'),bar2=document.getElementById('bar2'),bar3=document.getElementById('bar3');
+    toggle.addEventListener('click',()=>{const o=!menu.classList.contains('hidden');menu.classList.toggle('hidden',o);menu.classList.toggle('flex',!o);bar1.style.transform=o?'':'translateY(8px) rotate(45deg)';bar2.style.opacity=o?'':'0';bar3.style.transform=o?'':'translateY(-8px) rotate(-45deg)';});
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.add('hidden');menu.classList.remove('flex');bar1.style.transform='';bar2.style.opacity='';bar3.style.transform='';}));
+  </script>
+</header>
+
+<main class="pt-20">
+
+  <!-- ── BREADCRUMB ───────────────────────────────────────── -->
+  <div class="max-w-3xl mx-auto px-6 pt-8">
+    <nav class="flex items-center gap-2 text-sm text-on-surface-variant font-body">
+      <a href="index.html" class="flex items-center gap-1 hover:text-primary transition-colors duration-200 font-semibold">
+        <span class="material-symbols-outlined text-[16px]">home</span>
+        Home
+      </a>
+      <span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+      <a href="faq.html" class="hover:text-primary transition-colors duration-200 font-semibold">Resources</a>
+      <span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+      <span class="text-on-surface font-semibold">The Science of Menopause</span>
+    </nav>
+  </div>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="pt-12 pb-16 bg-surface">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 w-fit mb-8">
+        <span class="material-symbols-outlined text-[16px]">science</span>
+        <span class="text-[10px] font-bold tracking-widest uppercase">Clinical Guide</span>
+      </div>
+      <h1 class="font-headline font-extrabold text-4xl md:text-5xl text-on-surface leading-tight tracking-tight mb-6">The Science of Menopause</h1>
+      <p class="font-article text-xl md:text-2xl text-on-surface-variant leading-relaxed font-normal italic mb-10">How hormonal shifts affect your body, brain, and long-term health — explained by our clinical team.</p>
+
+      <!-- Meta row -->
+      <div class="flex flex-wrap items-center gap-6 text-xs font-semibold uppercase tracking-widest text-outline border-t border-b border-outline-variant/20 py-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[16px]">person</span>
+          Menostat Clinical Team
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[16px]">schedule</span>
+          12 min read
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[16px]">verified</span>
+          Evidence-based
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DISCLAIMER ────────────────────────────────────────── -->
+  <div class="bg-primary/8 border-y border-primary/15">
+    <div class="max-w-3xl mx-auto px-6 py-4 flex items-start gap-3">
+      <span class="material-symbols-outlined text-primary text-xl mt-0.5 shrink-0">info</span>
+      <p class="text-sm text-on-surface-variant leading-relaxed"><strong class="text-on-surface">Educational content only.</strong> This article is written for informational purposes and does not constitute medical advice, diagnosis, or treatment. Consult a qualified healthcare professional regarding any symptoms or treatment decisions.</p>
+    </div>
+  </div>
+
+  <!-- ── ARTICLE BODY ──────────────────────────────────────── -->
+  <article class="py-16 bg-surface">
+    <div class="max-w-3xl mx-auto px-6 article-body">
+
+      <h2>What is happening inside your body</h2>
+      <p>From your early 40s onward, the ovaries begin producing less estrogen and progesterone. This decline is not sudden or linear — it is erratic. Hormone levels spike and crash unpredictably over several years before eventually settling at a permanently lower level. It is this instability, not just the low levels, that drives most of your symptoms.</p>
+      <p>Estrogen is not simply a reproductive hormone. It has receptors throughout the entire body — in your brain, joints, bones, blood vessels, bladder, skin, and gut. When estrogen fluctuates and falls, every one of these systems is affected. This is why menopause symptoms are so varied and why the same woman can experience hot flashes, joint pain, brain fog, and anxiety simultaneously. They are all caused by the same underlying hormonal shift.</p>
+      <p>Progesterone declines alongside estrogen and plays a significant role in sleep quality, mood stability, and anxiety regulation. Its loss is often responsible for the sleep disruption and heightened anxiety that many women experience even before hot flashes begin.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>The three phases and what each one feels like</h2>
+      <p>Perimenopause is the transition phase. It typically begins 4 to 10 years before the final period and is when the hormonal fluctuations are at their most chaotic. Periods become irregular. Symptoms appear. This phase can begin as early as the late 30s, and for Indian women — whose average menopause age is 46 to 48 — perimenopause commonly begins in the early 40s.</p>
+      <p>Menopause itself is defined as 12 consecutive months without a period. It is a single point in time, not a phase. Most women do not feel dramatically different the day they reach this marker.</p>
+      <p>Postmenopause is every year after that final period. Hormone levels stabilise at their new, permanently lower baseline. Some symptoms ease with time. Others — particularly genitourinary symptoms like vaginal dryness and urinary changes — are chronic and progressive without treatment. Long-term health risks related to bone and cardiovascular health become the primary concern.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Why hot flashes happen</h2>
+      <p>Hot flashes are caused by a dysfunction in the brain's thermoregulatory system — the system that controls your body temperature. Estrogen plays a direct role in maintaining the stability of this system. When estrogen fluctuates, the thermostat becomes oversensitive. A very small rise in core body temperature — one that would go completely unnoticed in a younger woman — triggers an emergency heat-release response: blood vessels in the skin dilate, you flush and sweat, your heart rate increases. The episode passes in minutes but can leave you exhausted.</p>
+      <p>Night sweats are simply hot flashes that occur during sleep. They disrupt sleep architecture even when they do not fully wake you, which is why so many women feel unrefreshed even after a full night in bed.</p>
+      <div class="pull-quote">
+        <p>The average Indian woman experiences hot flashes for 7 to 10 years across the transition. They are most intense in the 2 years before and after the final period.</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>Why your brain feels different</h2>
+      <p>Estrogen directly supports brain function. It helps regulate serotonin, dopamine, and norepinephrine — the neurotransmitters involved in mood, motivation, memory, and concentration. It also supports blood flow to the brain and protects neurons from inflammation and oxidative stress.</p>
+      <p>When estrogen fluctuates in perimenopause, these systems become unstable. The result is what women describe as brain fog: difficulty finding words, forgetting things mid-task, inability to concentrate, feeling mentally slower than usual. Research using neuroimaging has confirmed measurable changes in brain activity and metabolism during the menopausal transition.</p>
+      <p>This is not the beginning of dementia. Perimenopause brain fog fluctuates with sleep quality and hormone levels, typically improves with treatment, and does not affect the ability to form new memories — which is the earliest and most important marker of Alzheimer's disease. If your cognitive symptoms are severe, progressing rapidly, or accompanied by other neurological changes, a specialist should evaluate you, primarily to rule out thyroid disease, which causes almost identical symptoms and is extremely common in Indian women over 40.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Why joints and muscles hurt</h2>
+      <p>Estrogen has significant anti-inflammatory properties throughout the body. It maintains joint lubrication, supports muscle mass and strength, and modulates the inflammatory pathways that cause pain. When estrogen declines, inflammation increases and joints become stiffer and more painful.</p>
+      <p>This pattern of pain — which researchers now call the musculoskeletal syndrome of menopause — is the single most commonly reported symptom in Indian women, appearing more frequently even than hot flashes. It typically presents as pain that migrates around the body — hands, knees, hips, lower back, shoulders — rather than localising in a single joint. This migratory, fluctuating quality distinguishes it from osteoarthritis and rheumatoid arthritis, though all three can coexist.</p>
+      <p>Frozen shoulder has an established hormonal connection. Women are significantly more likely to develop frozen shoulder during the menopausal transition. Estrogen receptors are present in the shoulder capsule, and their loss appears to trigger the inflammatory process.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Why sleep becomes difficult</h2>
+      <p>Sleep disruption in menopause has two distinct mechanisms that often operate simultaneously.</p>
+      <p>The first is direct: night sweats wake you up, or the anticipation of waking prevents you from falling into deep sleep. This is the more obvious connection.</p>
+      <p>The second is less obvious but equally important: estrogen and progesterone directly regulate sleep architecture. Progesterone has a sedative effect and promotes deep, restorative sleep. Estrogen supports REM sleep and reduces the time it takes to fall asleep. When both hormones decline, sleep becomes lighter and more fragmented even on nights with no sweating. You spend less time in the stages of sleep that restore physical and cognitive function. This is why sleep deprivation in menopause produces a level of exhaustion that is disproportionate to the number of hours in bed.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Why mood changes happen</h2>
+      <p>Estrogen and progesterone are deeply involved in the brain's emotional regulation systems. Estrogen modulates serotonin and dopamine receptors. Progesterone metabolises into a compound called allopregnanolone, which has a direct calming effect on the brain similar to the mechanism of anti-anxiety medication. When progesterone falls unpredictably in perimenopause, that calming effect is lost and the nervous system becomes more reactive.</p>
+      <p>The result is irritability that feels disproportionate, emotional sensitivity, a low threshold for frustration, and mood swings that can shift within the same day. This is not a psychological fragility or a personality trait. It is a neurochemical change with a clear biological cause.</p>
+      <div class="pull-quote">
+        <p>Women with a history of PMS, PMDD, or postpartum depression are more sensitive to hormonal fluctuations and typically experience more pronounced mood symptoms in perimenopause. This is a recognised clinical pattern, not a coincidence.</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>What happens to bones</h2>
+      <p>Bone is living tissue that is continuously broken down and rebuilt. Estrogen is the primary regulator of bone density in women. It slows the breakdown process and supports the activity of cells that build new bone. When estrogen falls sharply at menopause, bone resorption accelerates dramatically. Women lose 10 to 20% of bone density in the first 5 years after menopause — more than at any other point in life.</p>
+      <p>For Indian women, this risk is compounded by two factors. First, Indian women's baseline bone mineral density is approximately two standard deviations lower than Western women, meaning the starting point is lower before any menopausal loss occurs. Second, because Indian women reach menopause earlier, the period of accelerated bone loss also begins earlier, meaning the cumulative deficit by age 70 is significantly greater. Osteoporotic fractures occur 10 to 20 years earlier in Indian women than in Western populations.</p>
+      <p>Vitamin D deficiency, which affects an estimated 60 to 90% of Indians, amplifies this risk considerably. Estrogen helps the body use Vitamin D more efficiently, so its decline worsens an already widespread deficiency.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>What happens to the heart and blood vessels</h2>
+      <p>Before menopause, estrogen provides significant cardiovascular protection. It keeps blood vessels flexible, helps maintain healthy cholesterol levels by increasing HDL and reducing LDL, reduces arterial inflammation, and supports healthy blood pressure regulation. This is a major reason why premenopausal women have substantially lower rates of heart disease than age-matched men.</p>
+      <p>When estrogen falls at menopause, all of these protective mechanisms weaken simultaneously. LDL cholesterol typically rises. HDL may fall. Blood vessels become stiffer. Blood pressure tends to increase. Inflammatory markers rise. The net effect is a meaningful increase in cardiovascular risk within a few years of menopause.</p>
+      <p>Indian women are particularly affected because cardiovascular disease tends to present a decade earlier in South Asians compared to Western populations, and our risk profile after menopause is therefore disproportionately high. An Indian woman who reaches menopause at 46 may have 40 years of postmenopausal cardiovascular risk ahead of her.</p>
+      <div class="pull-quote">
+        <p>Starting HRT within 10 years of menopause, or before age 60, has been shown in multiple studies to reduce cardiovascular risk rather than increase it. This is called the timing hypothesis and is now part of international guidelines from NAMS, NICE, and the International Menopause Society.</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>What happens to the genitourinary system</h2>
+      <p>The tissues of the vagina, vulva, urethra, and bladder are highly estrogen-sensitive. When estrogen levels fall, these tissues thin, lose elasticity, and produce less natural moisture. The vaginal pH changes, making the environment more vulnerable to infection and irritation.</p>
+      <p>Unlike vasomotor symptoms such as hot flashes, which often improve on their own over time, genitourinary symptoms do not resolve without treatment. They are progressive. Left untreated, they cause increasing discomfort, painful intercourse, recurrent urinary tract infections, urinary urgency and frequency, and bladder leakage.</p>
+      <p>This cluster of symptoms is known as the genitourinary syndrome of menopause (GSM). It is reported by up to 70% of postmenopausal women but is dramatically underreported in clinical settings because women are reluctant to raise it. In India, where discussions of vaginal health carry significant social stigma, GSM is one of the most undertreated conditions in women's health.</p>
+      <p>Local vaginal estrogen — applied directly to the affected tissue in cream or pessary form — is extremely effective at reversing these changes. The dose is so low that it is not significantly absorbed into the bloodstream, meaning it is appropriate even for women who cannot use systemic HRT.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Why the thyroid must always be considered</h2>
+      <p>Thyroid disorders are extremely common in Indian women — India has one of the highest rates of hypothyroidism in the world, with estimates suggesting 10 to 15% of women over 40 are affected, many without a diagnosis.</p>
+      <p>The symptoms of hypothyroidism — fatigue, weight gain, brain fog, depression, hair loss, joint pain, feeling cold, and irregular periods — are almost identical to the symptoms of perimenopause. This overlap causes significant diagnostic confusion. Many women are treated for one when they actually have the other, or more commonly, they have both simultaneously and neither is being adequately addressed.</p>
+      <p>Any thorough menopause assessment must include thyroid function testing. A simple TSH blood test is sufficient as a first step. If thyroid dysfunction is identified, it must be treated alongside any hormonal therapy, as untreated hypothyroidism will significantly blunt the response to HRT.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>What the evidence actually says about HRT safety</h2>
+      <p>The widespread fear of HRT in India — and globally — can be traced to a single study published in 2002 called the Women's Health Initiative (WHI). That study reported increased risks of breast cancer and cardiovascular disease in women taking combined HRT. The reaction was swift and severe: prescription rates dropped by 80% within 2 years. Many women who were benefiting from treatment were abruptly told to stop.</p>
+      <p>Over the following two decades, that study has been thoroughly reanalysed and its conclusions widely challenged. The problems were significant: the women in the study had an average age of 63 — more than 10 years past menopause. Most had pre-existing cardiovascular risk factors. The HRT used was an older oral formulation, not the body-identical transdermal preparations now preferred. The absolute risk increases were very small even in that population, and the study design was not appropriate for generalising to younger perimenopausal women.</p>
+      <p>Current consensus from every major menopause society — NAMS, NICE, the British Menopause Society, the International Menopause Society, and the Indian Menopause Society — is consistent: for healthy women under 60, or within 10 years of menopause onset, who do not have absolute contraindications, the benefits of HRT substantially outweigh the risks. Modern transdermal estrogen does not increase clot risk. Body-identical micronised progesterone carries a more favourable safety profile than older synthetic progestogens. And for the majority of women in perimenopause and early postmenopause, HRT is not merely symptom management — it is active prevention of bone loss and cardiovascular disease.</p>
+      <div class="pull-quote">
+        <p>The 2002 study should not be making treatment decisions for Indian women in 2025. If your doctor is still citing it as a reason to avoid HRT, a second opinion from a menopause specialist is warranted.</p>
+      </div>
+
+      <!-- End matter -->
+      <div class="mt-16 pt-8 border-t border-outline-variant/20">
+        <div class="flex items-start gap-4 p-6 bg-surface-container-low rounded-2xl">
+          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-primary text-xl">verified</span>
+          </div>
+          <div>
+            <p class="font-headline font-bold text-sm text-on-surface mb-1">Written by the Menostat Clinical Team</p>
+            <p class="text-xs text-on-surface-variant leading-relaxed">Our clinical team comprises board-certified gynaecologists with specialist interest in perimenopause and menopause management. All content is reviewed for accuracy against current evidence from NAMS, NICE, IMS, and the Indian Menopause Society.</p>
+          </div>
+        </div>
+
+        <!-- Related links -->
+        <div class="mt-10">
+          <p class="font-headline font-bold text-sm uppercase tracking-widest text-outline mb-5">Continue reading</p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="faq.html" class="flex items-center gap-4 p-5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all group">
+              <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-primary text-xl">quiz</span>
+              </div>
+              <div>
+                <p class="font-headline font-bold text-sm text-on-surface mb-0.5">FAQs &amp; Resources</p>
+                <p class="text-xs text-on-surface-variant">42 questions answered by our specialists</p>
+              </div>
+              <span class="material-symbols-outlined text-primary ml-auto group-hover:translate-x-1 transition-transform">east</span>
+            </a>
+            <a href="index.html#pricing" class="flex items-center gap-4 p-5 bg-primary border border-primary rounded-xl hover:bg-primary-container transition-all group">
+              <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-white text-xl">quiz</span>
+              </div>
+              <div>
+                <p class="font-headline font-bold text-sm text-white mb-0.5">Take Your Assessment</p>
+                <p class="text-xs text-white/70">Free. Confidential. 10 minutes.</p>
+              </div>
+              <span class="material-symbols-outlined text-white ml-auto group-hover:translate-x-1 transition-transform">east</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ───────────────────────────────────────────────── -->
+  <section class="py-32 bg-surface-container-low border-t border-outline-variant/10">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-on-surface rounded-3xl p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+        <div class="absolute top-0 left-0 w-full h-1.5 bg-primary"></div>
+        <div class="relative z-10 flex flex-col items-center">
+          <span class="text-primary font-bold text-xs uppercase tracking-[0.4em] mb-8">Clinical Symptom Evaluation</span>
+          <h2 class="font-headline font-extrabold text-3xl md:text-5xl mb-12">Ready to understand what your body is telling you?</h2>
+          <ul class="flex flex-col gap-6 text-left max-w-md w-full mb-12 text-surface-variant/90 text-base">
+            <li class="flex gap-4">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <p>Get a personalised health profile reviewed by board-certified specialists.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <p>Understand how biological shifts are impacting your physical and mental health.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <p>Receive a custom care plan designed for your specific clinical needs.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <p>Zero-friction digital intake with no waiting rooms or travel required.</p>
+            </li>
+          </ul>
+          <a href="index.html#pricing" class="w-full sm:w-auto bg-primary text-on-primary px-12 py-5 rounded-xl font-headline font-extrabold text-2xl hover:scale-105 transition-transform shadow-xl shadow-primary/30 inline-block">
+            Start Free Assessment
+          </a>
+          <p class="mt-8 text-sm text-surface-variant/50 italic font-light max-w-sm">Secure and confidential. Your data is protected by clinical privacy standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer class="w-full py-16 px-6 border-t border-slate-200/10 bg-slate-50 font-['Inter']">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-12">
+    <div class="text-2xl font-black text-slate-900 uppercase tracking-tighter">Menostat</div>
+    <div class="flex flex-wrap justify-center gap-8 text-[11px] uppercase tracking-widest font-bold">
+      <a class="text-slate-500 hover:text-primary transition-colors" href="#">Privacy Standards</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="#">Compliance</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="faq.html">FAQs</a>
+    </div>
+    <div class="text-slate-400 text-[10px] text-center md:text-right uppercase tracking-[0.2em] font-medium">
+      © 2026 Menostat Medical. Specialist Care for Menopause.
+    </div>
+  </div>
+</footer>
+
+<!-- ── READING PROGRESS ───────────────────────────────────── -->
+<script>
+  const bar = document.getElementById('reading-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (scrollTop / docHeight * 100) + '%';
+  }, { passive: true });
+</script>
+
+</body>
+</html>
