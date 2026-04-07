@@ -353,7 +353,7 @@
       <button onclick="goToStep(3)" class="flex-none px-6 py-3.5 rounded-xl border border-outline-variant font-headline font-bold text-sm text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
         <span class="material-symbols-outlined align-middle text-[18px]">arrow_back</span>
       </button>
-      <button onclick="showResults()" class="flex-1 bg-primary text-on-primary py-3.5 rounded-xl font-headline font-bold text-base hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20">
+      <button onclick="goToStep(6)" class="flex-1 bg-primary text-on-primary py-3.5 rounded-xl font-headline font-bold text-base hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20">
         See My Results <span class="material-symbols-outlined align-middle ml-1">insights</span>
       </button>
     </div>
@@ -398,9 +398,39 @@
   </div>
 
   <!-- ════════════════════════════════════ -->
-  <!-- STEP 6 — RESULTS                    -->
+  <!-- STEP 6 — EMAIL CAPTURE              -->
   <!-- ════════════════════════════════════ -->
   <div class="step" id="step-6">
+    <div class="text-center mb-8">
+      <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+        <span class="material-symbols-outlined text-3xl text-primary">mark_email_unread</span>
+      </div>
+      <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-3">Almost There</p>
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-surface mb-3">Where should we send your results?</h2>
+      <p class="text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto">Enter your email to view your personalised report. We'll also save it so your specialist can review it before your consultation.</p>
+    </div>
+
+    <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-6 mb-6">
+      <label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2" for="capture-email">Email address</label>
+      <input id="capture-email" type="email" placeholder="you@example.com" autocomplete="email"
+        class="w-full border border-outline-variant rounded-xl px-4 py-3.5 text-base font-['Inter'] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-white"
+      />
+      <p id="email-error" class="text-red-500 text-xs mt-2 hidden">Please enter a valid email address.</p>
+      <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">🔒 Your data is protected by clinical privacy standards. We never share your information with third parties.</p>
+    </div>
+
+    <button onclick="submitEmailAndShowResults()" class="w-full bg-primary text-on-primary py-4 rounded-xl font-headline font-bold text-base hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20 mb-3">
+      See My Results <span class="material-symbols-outlined align-middle ml-1">insights</span>
+    </button>
+    <button onclick="showResults()" class="w-full text-center text-xs text-on-surface-variant hover:text-primary transition-colors py-2">
+      Skip for now
+    </button>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- STEP 7 — RESULTS                    -->
+  <!-- ════════════════════════════════════ -->
+  <div class="step" id="step-7">
     <!-- Populated entirely by JS -->
   </div>
 
@@ -549,8 +579,8 @@ function goToStep(n) {
 }
 
 function updateProgress(step) {
-  // Steps: 0=welcome(0%), 1=about(15%), 2=symptoms(35%), 3=safety(60%), 4=adaptive(80%), 6=results(100%)
-  const pct = [0, 15, 35, 60, 80, 100, 100];
+  // Steps: 0=welcome(0%), 1=about(15%), 2=symptoms(35%), 3=safety(60%), 4=adaptive(80%), 5=hardstop(100%), 6=email(92%), 7=results(100%)
+  const pct = [0, 15, 35, 60, 80, 100, 92, 100];
   document.getElementById('progress-fill').style.width = (pct[step] || 0) + '%';
 }
 
@@ -584,8 +614,8 @@ function validateAndGo(fromStep, toStep) {
     buildAdaptiveModules();
     const container = document.getElementById('adaptive-modules');
     if (container.children.length === 0) {
-      // No adaptive modules needed — go straight to results
-      showResults();
+      // No adaptive modules needed — go to email capture
+      goToStep(6);
       return;
     }
   }
@@ -838,6 +868,25 @@ function handleCrisisQ(val) {
 }
 
 // ═══════════════════════════════════════════════════
+// EMAIL CAPTURE
+// ═══════════════════════════════════════════════════
+function submitEmailAndShowResults() {
+  const input = document.getElementById('capture-email');
+  const error = document.getElementById('email-error');
+  const val = input.value.trim();
+  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  if (!valid) {
+    error.classList.remove('hidden');
+    input.focus();
+    return;
+  }
+  error.classList.add('hidden');
+  // Store email for potential CRM/backend use
+  window._capturedEmail = val;
+  showResults();
+}
+
+// ═══════════════════════════════════════════════════
 // RESULTS
 // ═══════════════════════════════════════════════════
 function showResults() {
@@ -1044,9 +1093,9 @@ function showResults() {
     </div>
   `;
 
-  const resultsStep = document.getElementById('step-6');
+  const resultsStep = document.getElementById('step-7');
   resultsStep.innerHTML = resultsHTML;
-  goToStep(6);
+  goToStep(7);
 
   // Animate bars
   setTimeout(() => {
