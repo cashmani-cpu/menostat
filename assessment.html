@@ -920,7 +920,21 @@ function submitToSheets(category) {
     mrs11_joints:   state.mrsScores['mrs11']?.score ?? '',
     thyroid_flag:   document.querySelector('input[name="thyroid"]:checked')?.value === 'not-tested' ? 'yes' : 'no',
     abs_ci:         [...document.querySelectorAll('input[name="abs-ci"]:checked')].map(el => el.value).join(', ') || 'none',
-    rel_risk:       [...document.querySelectorAll('input[name="rel-risk"]:checked')].map(el => el.value).join(', ') || 'none'
+    rel_risk:       [...document.querySelectorAll('input[name="rel-risk"]:checked')].map(el => el.value).join(', ') || 'none',
+    // Adaptive follow-up answers
+    vms_freq:          document.querySelector('input[name="vms-freq"]:checked')?.value ?? '',
+    night_sweats_wake: document.querySelector('input[name="night-sweats-wake"]:checked')?.value ?? '',
+    sleep_type:        document.querySelector('input[name="sleep-type"]:checked')?.value ?? '',
+    sleep_freq:        document.querySelector('input[name="sleep-freq"]:checked')?.value ?? '',
+    phq2_interest:     document.querySelector('input[name="phq2-1"]:checked')?.value ?? '',
+    phq2_depressed:    document.querySelector('input[name="phq2-2"]:checked')?.value ?? '',
+    gad2_anxious:      document.querySelector('input[name="gad2-1"]:checked')?.value ?? '',
+    phq9_q9:           document.querySelector('input[name="phq9-q9"]:checked')?.value ?? '',
+    gsm_primary:       document.querySelector('input[name="gsm-primary"]:checked')?.value ?? '',
+    cognitive_type:    document.querySelector('input[name="cognitive-type"]:checked')?.value ?? '',
+    cognitive_pattern: document.querySelector('input[name="cognitive-pattern"]:checked')?.value ?? '',
+    msk_pattern:       document.querySelector('input[name="msk-pattern"]:checked')?.value ?? '',
+    msk_onset:         document.querySelector('input[name="msk-onset"]:checked')?.value ?? ''
   };
   fetch(SHEETS_URL, {
     method: 'POST',
