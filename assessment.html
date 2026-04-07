@@ -868,6 +868,11 @@ function handleCrisisQ(val) {
 }
 
 // ═══════════════════════════════════════════════════
+// GOOGLE SHEETS ENDPOINT — paste your Web App URL here
+// ═══════════════════════════════════════════════════
+const SHEETS_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+
+// ═══════════════════════════════════════════════════
 // EMAIL CAPTURE
 // ═══════════════════════════════════════════════════
 function submitEmailAndShowResults() {
@@ -881,9 +886,48 @@ function submitEmailAndShowResults() {
     return;
   }
   error.classList.add('hidden');
-  // Store email for potential CRM/backend use
   window._capturedEmail = val;
   showResults();
+}
+
+// ═══════════════════════════════════════════════════
+// SUBMIT TO GOOGLE SHEETS
+// ═══════════════════════════════════════════════════
+function submitToSheets(category) {
+  if (!SHEETS_URL || SHEETS_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') return;
+  const s = getMrsSubscores();
+  const payload = {
+    timestamp:      new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+    name:           document.getElementById('q-name')?.value?.trim() || '',
+    email:          window._capturedEmail || '',
+    age:            document.getElementById('q-age')?.value?.trim() || '',
+    last_period:    document.querySelector('input[name="last-period"]:checked')?.value || '',
+    category:       category,
+    score_total:    s.total,
+    score_somatic:  s.somatic,
+    score_psych:    s.psychological,
+    score_urogenit: s.urogenital,
+    mrs1_hot_flush: state.mrsScores['mrs1']?.score ?? '',
+    mrs2_heart:     state.mrsScores['mrs2']?.score ?? '',
+    mrs3_sleep:     state.mrsScores['mrs3']?.score ?? '',
+    mrs4_depression:state.mrsScores['mrs4']?.score ?? '',
+    mrs5_irritabil: state.mrsScores['mrs5']?.score ?? '',
+    mrs6_anxiety:   state.mrsScores['mrs6']?.score ?? '',
+    mrs7_exhaustion:state.mrsScores['mrs7']?.score ?? '',
+    mrs8_sexual:    state.mrsScores['mrs8']?.score ?? '',
+    mrs9_bladder:   state.mrsScores['mrs9']?.score ?? '',
+    mrs10_vaginal:  state.mrsScores['mrs10']?.score ?? '',
+    mrs11_joints:   state.mrsScores['mrs11']?.score ?? '',
+    thyroid_flag:   document.querySelector('input[name="thyroid"]:checked')?.value === 'not-tested' ? 'yes' : 'no',
+    abs_ci:         [...document.querySelectorAll('input[name="abs-ci"]:checked')].map(el => el.value).join(', ') || 'none',
+    rel_risk:       [...document.querySelectorAll('input[name="rel-risk"]:checked')].map(el => el.value).join(', ') || 'none'
+  };
+  fetch(SHEETS_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(() => {}); // silent fail — never block the user
 }
 
 // ═══════════════════════════════════════════════════
@@ -910,6 +954,9 @@ function showResults() {
   } else {
     category = 'early';
   }
+
+  // Submit to Google Sheets
+  submitToSheets(category);
 
   const CATEGORIES = {
     early: {
