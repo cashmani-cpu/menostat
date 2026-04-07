@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQs & Resources | Menostat — Menopause Care for Indian Women</title>
+<meta name="description" content="Answers to the most common questions about perimenopause, menopause, HRT, and how Menostat works. Evidence-based guidance for Indian women."/>
+<link rel="canonical" href="https://menostat.com/faq.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://menostat.com/faq.html"/>
+<meta property="og:title" content="FAQs & Resources | Menostat"/>
+<meta property="og:description" content="Answers to the most common questions about perimenopause, menopause, HRT, and how Menostat works."/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary": "#ffffff","surface": "#f7f9fc","surface-container-lowest": "#ffffff",
+          "on-error": "#ffffff","tertiary": "#4d5d70","surface-container-high": "#e6e8eb",
+          "outline": "#717786","primary": "#0059bb","background": "#f7f9fc",
+          "inverse-surface": "#2d3133","primary-container": "#0070ea",
+          "on-primary-container": "#fefcff","on-secondary": "#ffffff",
+          "surface-variant": "#e0e3e6","surface-container-low": "#f2f4f7",
+          "surface-container-highest": "#e0e3e6","on-secondary-container": "#007261",
+          "on-tertiary": "#ffffff","on-surface": "#191c1e","error-container": "#ffdad6",
+          "primary-fixed-dim": "#adc7ff","outline-variant": "#c1c6d7",
+          "surface-dim": "#d8dadd","on-surface-variant": "#414754",
+          "on-background": "#191c1e","secondary": "#006b5c","inverse-primary": "#adc7ff",
+          "surface-container": "#eceef1","tertiary-container": "#65768a",
+          "on-tertiary-container": "#fdfcff"
+        },
+        borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+        fontFamily: { headline: ["Manrope"], body: ["Inter"], label: ["Inter"] }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.28s ease; }
+  .faq-answer.open { grid-template-rows: 1fr; }
+  .faq-answer > div { overflow: hidden; }
+  .category-body { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.3s ease; }
+  .category-body.collapsed { grid-template-rows: 0fr; }
+  .category-body > div { overflow: hidden; }
+  .chevron { transition: transform 0.25s ease; }
+  .chevron.rotated { transform: rotate(180deg); }
+  .faq-item.hidden-by-search { display: none; }
+  .category-section.hidden-by-search { display: none; }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-outline-variant/10">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">Menostat</a>
+    <div class="hidden md:flex items-center gap-8 font-['Manrope'] font-semibold tracking-tight">
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#how-it-works">How it Works</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#symptoms">Symptoms</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#pricing">Assessment</a>
+      <a class="text-blue-600 font-bold" href="faq.html">Resources</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="index.html#pricing" class="hidden sm:block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide hover:scale-95 duration-150 transition-transform shadow-lg shadow-primary/20">Start Consultation</a>
+      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden flex-col border-t border-outline-variant/10 bg-slate-50/95 backdrop-blur-xl font-['Manrope'] font-semibold">
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#how-it-works">How it Works</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#symptoms">Symptoms</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#pricing">Assessment</a>
+    <a class="px-6 py-4 text-blue-600 font-bold hover:bg-slate-100 transition-colors" href="faq.html">Resources</a>
+  </div>
+  <script>
+    const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('mobile-menu'),bar1=document.getElementById('bar1'),bar2=document.getElementById('bar2'),bar3=document.getElementById('bar3');
+    toggle.addEventListener('click',()=>{const o=!menu.classList.contains('hidden');menu.classList.toggle('hidden',o);menu.classList.toggle('flex',!o);bar1.style.transform=o?'':'translateY(8px) rotate(45deg)';bar2.style.opacity=o?'':'0';bar3.style.transform=o?'':'translateY(-8px) rotate(-45deg)';});
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.add('hidden');menu.classList.remove('flex');bar1.style.transform='';bar2.style.opacity='';bar3.style.transform='';}));
+  </script>
+</header>
+
+<main class="pt-20">
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="py-20 bg-surface border-b border-outline-variant/10">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 w-fit mx-auto mb-6">
+        <span class="material-symbols-outlined text-[18px]">quiz</span>
+        <span class="text-[10px] font-bold tracking-widest uppercase">Knowledge Centre</span>
+      </div>
+      <h1 class="font-headline font-extrabold text-4xl md:text-6xl text-on-surface leading-tight tracking-tight mb-6">FAQs &amp; Resources</h1>
+      <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">Everything you need to understand perimenopause, menopause, and your care options — written clearly and without jargon.</p>
+    </div>
+  </section>
+
+  <!-- ── DISCLAIMER ────────────────────────────────────────── -->
+  <div class="bg-primary/8 border-y border-primary/15">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-start gap-3">
+      <span class="material-symbols-outlined text-primary text-xl mt-0.5 shrink-0">info</span>
+      <p class="text-sm text-on-surface-variant leading-relaxed"><strong class="text-on-surface">Educational content only.</strong> The information on this page is for general informational purposes and does not constitute medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition or treatment.</p>
+    </div>
+  </div>
+
+  <!-- ── SEARCH ─────────────────────────────────────────────── -->
+  <div class="sticky top-20 z-40 bg-surface/90 backdrop-blur-md border-b border-outline-variant/10 py-4">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="relative">
+        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl">search</span>
+        <input id="faq-search" type="text" placeholder="Search questions and answers…" class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface placeholder:text-outline text-sm font-body focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"/>
+        <button id="search-clear" class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+      <p id="search-status" class="text-xs text-outline mt-2 hidden"></p>
+    </div>
+  </div>
+
+  <!-- ── FAQ CONTENT ───────────────────────────────────────── -->
+  <section class="py-16 bg-surface">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col gap-6" id="faq-root">
+
+
+      <!-- ═══ CATEGORY 1 ═══ -->
+      <div class="category-section bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm overflow-hidden">
+        <button class="category-toggle w-full flex items-center justify-between px-8 py-6 text-left group" data-category="0">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">psychology</span>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-0.5">Category 1 of 7</p>
+              <h2 class="font-headline font-bold text-lg md:text-xl text-on-surface">Understanding Perimenopause &amp; Menopause</h2>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-outline chevron rotated shrink-0">expand_more</span>
+        </button>
+        <div class="category-body">
+          <div>
+            <div class="border-t border-outline-variant/15 mx-6 mb-2"></div>
+            <div class="px-6 pb-6 flex flex-col gap-2">
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">What exactly is menopause? Is it a single day or a phase?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Technically, menopause is a single day — the day that marks 12 full months after your last period. But that one day is rarely the hard part. The real transition is called perimenopause, which is the phase leading up to that day. It can start 4 to 10 years before your periods stop and is when most symptoms appear. After menopause, you are postmenopausal for the rest of your life. So when women say "I'm going through menopause," they almost always mean perimenopause.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">At what age does menopause happen in India?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">The average age of menopause for Indian women is 46 to 48 years — about five years earlier than women in the US or UK. This means perimenopause can begin as early as your late 30s or early 40s. Early menopause (before age 45) affects about 16% of Indian women, and premature menopause (before 40) affects around 2%. If your symptoms started in your late 30s, that is completely within the normal range for Indian women.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">What is the difference between perimenopause and menopause?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Perimenopause is the transition phase where your hormones are fluctuating and your periods are becoming irregular. You still have periods but they may change in frequency, flow, or timing. This is typically when most symptoms — hot flashes, mood changes, sleep problems — are at their worst. Menopause is the point after 12 consecutive months with no period at all. After that, you are postmenopausal. The symptoms do not magically stop at menopause — they often continue for several more years unless treated.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">How do I know if what I'm experiencing is perimenopause or just stress?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">This is one of the most common questions we hear, and it matters because the answer changes what will actually help you. The key signs that point to perimenopause rather than just stress include changes in your menstrual cycle (periods coming earlier, later, heavier, lighter, or skipping), physical symptoms that come and go like hot flashes or night sweats, joint pain that seems to have appeared without injury, and mood changes or brain fog that feel different from your usual stress response. Stress can make perimenopause worse, but perimenopause is a hormonal shift that stress management alone will not fix. The best way to know for sure is a consultation with a specialist.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Can perimenopause start in my late 30s?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes. While the average age is the mid-40s, perimenopause can genuinely begin in the late 30s, particularly for Indian women. You may still have regular periods but start noticing changes like heavier or more painful periods, new PMS symptoms you never had before, mood changes, or unusual fatigue. These early signs are easy to dismiss or attribute to a busy life, which is why many women spend years not knowing what is happening. If you are in your late 30s and something feels different, it is worth checking.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">My mother went through menopause at 45. Does that mean I will too?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Very likely, yes. The age at which your mother experienced menopause is one of the strongest predictors of when you will. Genetics play a major role. Other factors that can bring menopause earlier include smoking, certain autoimmune conditions, a history of chemotherapy or radiation, and surgical removal of the ovaries. If your mother had early menopause, starting to pay attention to your own symptoms from your late 30s onward is a sensible approach.</div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ═══ CATEGORY 2 ═══ -->
+      <div class="category-section bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm overflow-hidden">
+        <button class="category-toggle w-full flex items-center justify-between px-8 py-6 text-left group" data-category="1">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">thermostat</span>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-0.5">Category 2 of 7</p>
+              <h2 class="font-headline font-bold text-lg md:text-xl text-on-surface">Symptoms — What's Normal, What's Not</h2>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-outline chevron rotated shrink-0">expand_more</span>
+        </button>
+        <div class="category-body">
+          <div>
+            <div class="border-t border-outline-variant/15 mx-6 mb-2"></div>
+            <div class="px-6 pb-6 flex flex-col gap-2">
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">What are the most common symptoms Indian women experience?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Indian women experience menopause differently from Western women. Research across India consistently shows that joint and muscle pain is actually the most commonly reported symptom — more common than hot flashes. Other very common symptoms include physical exhaustion and lack of energy, sleep problems, mood changes and irritability, brain fog and memory issues, and anxiety. Hot flashes are reported by roughly 36 to 53% of Indian women, compared to 70 to 80% of women in the West. Vaginal dryness and urinary symptoms are also very common but often go unreported because women feel embarrassed to mention them. You are not alone in experiencing any of these.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Is joint pain really related to menopause? My doctor says it's just arthritis.</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes, joint pain has a direct hormonal connection and is one of the most underrecognised menopause symptoms in India. Estrogen has anti-inflammatory effects throughout the body, including in your joints. When estrogen drops, inflammation increases and joint lubrication decreases. This type of joint pain typically migrates — it moves around your body rather than staying fixed in one place — and it often appears alongside other menopause symptoms. It is different from osteoarthritis, which tends to be fixed in specific joints and worsens with use. If your joint pain appeared in your 40s alongside other changes, ask your gynecologist to consider a hormonal connection before accepting arthritis as the only explanation.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">I keep forgetting words mid-sentence. Is something seriously wrong with me?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Word-finding difficulty, memory lapses, difficulty concentrating, and feeling mentally foggy are all extremely common in perimenopause and are collectively called brain fog. Around two in three women report these symptoms during the menopausal transition. The important thing to know is that this is not the beginning of dementia. Perimenopause brain fog fluctuates — it tends to be worse when you are sleep-deprived or having frequent night sweats, and better on other days. It responds to treatment. Estrogen therapy in particular often improves cognitive clarity significantly. If symptoms are severe or progressing rapidly, a specialist should rule out thyroid issues, which can cause identical symptoms.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">My heart races sometimes for no reason. Should I be worried?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Heart palpitations — the sensation of your heart racing, skipping a beat, or fluttering — are reported by up to 54% of postmenopausal women and are directly linked to hormonal changes. During a hot flash, your heart rate can increase by 8 to 16 beats per minute due to changes in your autonomic nervous system. Most menopause-related palpitations are completely benign. However, if you experience palpitations along with chest pain, shortness of breath, dizziness, or fainting, please seek immediate medical attention as these need to be assessed urgently. If palpitations occur without these red flags and alongside other menopause symptoms, mention them to your specialist — they are very likely hormonal.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">I've been crying at random things and getting angry at my family for no reason. Is this menopause?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Almost certainly yes. Mood changes — including sudden emotional sensitivity, irritability that feels out of proportion, and feeling unlike yourself — are classic perimenopause symptoms caused directly by hormonal fluctuations. Estrogen and progesterone influence the brain chemicals that regulate mood, including serotonin and dopamine. When these hormones become unstable, your emotional regulation is affected. This is not a personality change or a mental health crisis — it is a physiological response to changing hormone levels. Many women feel enormous relief just from understanding this. Effective treatment — whether hormonal or non-hormonal — can significantly stabilise mood.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">I've gained weight around my belly even though my diet hasn't changed. What's happening?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">This is one of the most frustrating and near-universal experiences of the menopausal transition. When estrogen levels decline, your body shifts fat storage from the hips and thighs to the abdomen. At the same time, metabolic rate slows slightly, insulin sensitivity can decrease, and sleep disruption increases cortisol levels — all of which promote abdominal fat storage. This type of weight gain does not respond well to the same diet and exercise approach that worked before. It requires understanding the hormonal driver. HRT can help reduce abdominal fat redistribution in many women, and a specialist can guide you on what combination of hormonal support, dietary changes, and exercise will be most effective for you.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">My periods have become very heavy and unpredictable. Is this normal in perimenopause?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Irregular and sometimes heavier periods are a hallmark of perimenopause. As ovulation becomes irregular, cycles can shorten or lengthen, flow can increase or decrease, and you may skip months entirely. Heavy periods are common because erratic estrogen levels cause the uterine lining to build up unevenly. However, there is an important distinction: bleeding that soaks more than one pad per hour for two or more consecutive hours, or any bleeding after you have already gone 12 months without a period, should be evaluated by a doctor promptly. The latter is called postmenopausal bleeding and is a red flag that always needs investigation.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">I've been having trouble sleeping for over a year. Is this connected to my hormones?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes, almost certainly. Sleep disruption is reported by a large majority of perimenopausal and menopausal women. There are two distinct causes that often overlap: night sweats waking you up (directly hormonal), and a separate hormonal effect on sleep architecture where estrogen and progesterone help regulate deep sleep and REM sleep. When these hormones decline, your sleep becomes lighter, you wake more easily, and you spend less time in the restorative stages. If your sleep problems coincide with other menopausal symptoms, treatment that addresses the hormonal root cause often improves sleep significantly. Sleep medication alone rarely solves menopause-related insomnia long term.</div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ═══ CATEGORY 3 ═══ -->
+      <div class="category-section bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm overflow-hidden">
+        <button class="category-toggle w-full flex items-center justify-between px-8 py-6 text-left group" data-category="2">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">medication_liquid</span>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-0.5">Category 3 of 7</p>
+              <h2 class="font-headline font-bold text-lg md:text-xl text-on-surface">Hormone Replacement Therapy (HRT) — The Facts</h2>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-outline chevron rotated shrink-0">expand_more</span>
+        </button>
+        <div class="category-body">
+          <div>
+            <div class="border-t border-outline-variant/15 mx-6 mb-2"></div>
+            <div class="px-6 pb-6 flex flex-col gap-2">
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">What is HRT? What does it actually do?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">HRT stands for Hormone Replacement Therapy. It supplements the hormones — primarily estrogen, and progesterone for women who have a uterus — that your body is no longer producing in sufficient amounts. Think of it as replacing what is missing. When estrogen levels are restored to a normal range, the symptoms caused by its absence — hot flashes, sleep disruption, mood changes, joint pain, vaginal dryness, brain fog — typically improve significantly. HRT does not stop or reverse menopause. It supports your body through the transition and reduces the symptoms while that transition is happening.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">I heard HRT causes cancer. Is that true?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">This fear comes from a flawed study published in 2002 called the Women's Health Initiative (WHI). That study caused a global panic and led doctors worldwide to stop prescribing HRT. The problem is that the study has since been thoroughly re-analysed and its conclusions were found to be misleading — the women in the study were older, used an outdated type of oral HRT, and were not typical candidates. Current evidence from the British Menopause Society, the International Menopause Society, the Indian Menopause Society, and FOGSI is clear: for healthy women under 60 who start HRT within 10 years of menopause, the benefits significantly outweigh the risks. The risk with modern HRT formulations, especially transdermal (patch or gel), is very low. If your doctor is still citing the 2002 study as a reason to avoid HRT, it is worth getting a second opinion from a menopause specialist.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">What types of HRT are available in India?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Several forms are available, all at very reasonable costs since the medications are generic. Estradiol tablets (oral pills taken daily) are widely available and cost ₹200 to ₹500 per month. Estradiol patches worn on the skin and gels applied to the skin are available and deliver hormones directly into the bloodstream without passing through the liver first — these are often preferred as they carry a lower risk of blood clots. Micronized progesterone capsules (needed for women who still have their uterus) cost ₹300 to ₹600 per month. Tibolone is a combined synthetic hormone available as a single daily tablet. Vaginal estrogen cream for local symptoms like dryness costs ₹200 to ₹400 per month. A specialist will recommend the right combination and delivery method based on your specific situation.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Do I need HRT? Can I manage symptoms naturally?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Whether you need HRT depends entirely on the severity of your symptoms and their impact on your daily life. Many women with mild symptoms manage well with lifestyle changes — regular exercise, a high-protein diet, reducing caffeine and alcohol, stress management, and prioritising sleep. Phytoestrogen-rich foods like soy products and flaxseeds can help some women with mild symptoms. Non-hormonal medications are also available for specific symptoms like hot flashes and vaginal dryness. However, for moderate to severe symptoms — particularly if they are disrupting your sleep, affecting your work, damaging your relationships, or causing real physical pain — lifestyle changes alone are often insufficient. HRT remains the most effective treatment available. A consultation will help you understand what approach makes the most sense for your situation.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Can I take HRT if I still have my periods?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes. Many women start HRT in perimenopause while they are still having periods, especially if their symptoms are significantly impacting their quality of life. This is called perimenopausal HRT and is different in formulation from postmenopausal HRT. Your specialist will prescribe a regimen that accounts for the fact that you still have a natural hormonal cycle. It is important to continue using contraception if you do not want to become pregnant, as perimenopause does not guarantee infertility.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">How long do I need to take HRT?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">There is no fixed answer, and current guidelines have moved away from the old advice that HRT should be limited to 5 years. The current recommendation from NICE, NAMS, and IMS is that HRT should be used for as long as the benefits outweigh the risks for that individual — and for many women, that means many years. Duration should be decided in consultation with your specialist based on your symptoms, health history, and risk profile. Some women use it for 3 to 5 years until their symptoms naturally ease. Others with significant ongoing symptoms or long-term health benefits, particularly for bone and cardiovascular health, may continue longer. There is no arbitrary cutoff.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Is HRT the same as birth control pills?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">No. They are completely different. Birth control pills contain synthetic estrogen and progestin at high doses designed to prevent ovulation. HRT contains much lower doses of body-identical hormones designed to supplement declining levels — not to suppress your cycle. The doses in HRT are significantly lower than in contraceptives. HRT does not provide contraception. If you are perimenopausal and still having periods, you need separate contraception if pregnancy is a concern.</div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ═══ CATEGORY 4 ═══ -->
+      <div class="category-section bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm overflow-hidden">
+        <button class="category-toggle w-full flex items-center justify-between px-8 py-6 text-left group" data-category="3">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">rate_review</span>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-0.5">Category 4 of 7</p>
+              <h2 class="font-headline font-bold text-lg md:text-xl text-on-surface">Visiting Menostat — How It Works</h2>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-outline chevron rotated shrink-0">expand_more</span>
+        </button>
+        <div class="category-body">
+          <div>
+            <div class="border-t border-outline-variant/15 mx-6 mb-2"></div>
+            <div class="px-6 pb-6 flex flex-col gap-2">
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">How does Menostat work? What happens after I fill in the assessment?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">After you complete our symptom assessment, our system reviews your responses and generates a personalised symptom profile. If your profile suggests you would benefit from a specialist consultation, you will be offered the option to book a video appointment with one of our partner gynecologists — doctors who specialise specifically in perimenopause and menopause management. The consultation is 30 minutes, done from your home via video call. Your doctor will review your full intake, discuss your symptoms and history, and if appropriate, create a personalised treatment plan including a prescription. Your medication is then dispensed by a licensed pharmacy and delivered to your home.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Do I need to visit a clinic or hospital?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">No. Everything happens from your home. The symptom assessment is online, the consultation is by video call, the prescription is digital, and the medication is delivered to your door. You never need to visit a clinic, sit in a waiting room, or explain yourself to a general doctor who may not be up to date on menopause. For women who have been dismissed or misdiagnosed by general practitioners, this makes a significant difference.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Who are the doctors on Menostat?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Our doctors are qualified gynecologists — all hold DGO or MS Obstetrics and Gynecology degrees — with specific interest and experience in menopause and hormone health. All are registered with the Medical Council of India and comply with India's Telemedicine Practice Guidelines 2020. Before your consultation, your doctor receives a detailed summary of your symptom assessment so the entire 30 minutes is spent on you and your situation, not repeating basic intake information.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Is an online menopause consultation as good as seeing a doctor in person?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">For menopause assessment and management, yes. Menopause diagnosis is primarily clinical — based on your symptoms, age, menstrual history, and medical background — not on physical examination. A detailed, focused video consultation with a gynecologist who specialises in menopause will give you more useful guidance than a rushed in-person appointment with a general practitioner who has not kept up with the latest evidence. Where a physical examination is genuinely necessary, your Menostat doctor will tell you and guide you to the appropriate in-person facility.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">What if I already see a gynecologist? Can I still use Menostat?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Absolutely. Many women use Menostat alongside their existing healthcare. Some find that their regular gynecologist is focused on reproductive care and is less experienced with the nuances of menopause management. Menostat offers a specialist-level second opinion or ongoing menopause-focused care. We can also coordinate with your existing doctor if you want continuity of care.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Will my information be kept private?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes. Your health information is sensitive and we treat it that way. Menostat complies with India's Digital Personal Data Protection Act (DPDPA) 2023. Your data is never sold to third parties. Your symptom assessment and consultation records are only accessible to you and your treating doctor. All communication is encrypted. We use the same data standards required of licensed healthcare providers in India.</div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ═══ CATEGORY 5 ═══ -->
+      <div class="category-section bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm overflow-hidden">
+        <button class="category-toggle w-full flex items-center justify-between px-8 py-6 text-left group" data-category="4">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">payments</span>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-0.5">Category 5 of 7</p>
+              <h2 class="font-headline font-bold text-lg md:text-xl text-on-surface">Medication, Cost &amp; Practicalities</h2>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-outline chevron rotated shrink-0">expand_more</span>
+        </button>
+        <div class="category-body">
+          <div>
+            <div class="border-t border-outline-variant/15 mx-6 mb-2"></div>
+            <div class="px-6 pb-6 flex flex-col gap-2">
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">How much does the medication cost?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Generic HRT medications in India are now very affordable. Estradiol tablets or patches typically cost ₹200 to ₹900 per month at wholesale. Progesterone capsules cost ₹300 to ₹600 per month. Vaginal estrogen cream costs ₹200 to ₹400 per month. Most women's complete HRT regimen costs ₹400 to ₹800 per month in medication. This is included in your Menostat subscription so there is no separate bill for medications. Compare that to the cost of multiple doctor visits, unrelated specialist referrals, and treatments for symptoms that were never correctly identified.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Will the medication be delivered to my home? Is it discreet?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes. Your medication is dispensed by a licensed pharmacy and delivered to your home within 24 to 48 hours. Packaging is plain and discreet — there is no branding or medical information on the outside of the package. We understand that privacy matters, especially in shared living situations or apartments where neighbours or household staff might notice.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Do I need a prescription for HRT in India?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes. HRT medications are Schedule H drugs in India, meaning they legally require a prescription from a registered medical practitioner. Your Menostat consultation results in a valid digital prescription issued by your doctor through our ABDM-compliant e-prescription system. This is fully legal and compliant with India's Telemedicine Practice Guidelines 2020. You do not need to visit a doctor in person to obtain a legitimate prescription.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Does Menostat work with health insurance?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Currently Menostat operates on a direct-pay subscription basis and does not bill insurance. Consultation and medication costs are included in your monthly subscription. Many women find this is still cost-effective compared to the cumulative cost of insurance copays, multiple specialist visits, and medication purchased separately. We are working toward insurance tie-ups and will update this as it becomes available.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">What if I want to stop? Is there a cancellation fee?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">No. You can cancel your subscription at any time with no penalties or cancellation fees. If you decide to stop HRT, your doctor will guide you through a tapering approach rather than stopping abruptly, which can cause symptom rebound. We would rather you feel in control of your own care than feel locked into anything.</div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ═══ CATEGORY 6 ═══ -->
+      <div class="category-section bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm overflow-hidden">
+        <button class="category-toggle w-full flex items-center justify-between px-8 py-6 text-left group" data-category="5">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">monitor_heart</span>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-0.5">Category 6 of 7</p>
+              <h2 class="font-headline font-bold text-lg md:text-xl text-on-surface">Long-Term Health After Menopause</h2>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-outline chevron rotated shrink-0">expand_more</span>
+        </button>
+        <div class="category-body">
+          <div>
+            <div class="border-t border-outline-variant/15 mx-6 mb-2"></div>
+            <div class="px-6 pb-6 flex flex-col gap-2">
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Is menopause dangerous to my long-term health?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Menopause itself is not a disease — it is a natural transition. But the decline in estrogen that comes with it has real, long-term health consequences that are often not discussed. Bone density loss accelerates significantly in the first 5 years after menopause, increasing the risk of osteoporosis and fractures — this happens a decade earlier in Indian women than in Western women. Cardiovascular disease risk increases after menopause, and heart disease is the leading cause of death in postmenopausal women worldwide. The genitourinary changes — vaginal dryness, urinary symptoms — are chronic and get worse without treatment. Understanding and addressing these changes is not about fighting ageing — it is about staying well.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">How does menopause affect bone health in Indian women specifically?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Indian women face a particularly significant bone health challenge. Our average bone mineral density is approximately two standard deviations lower than Western women to begin with. Osteoporotic fractures occur 10 to 20 years earlier in Indian women. And because menopause occurs earlier in India, the window of accelerated bone loss starts sooner. This makes regular bone density screening (DEXA scan) and adequate calcium and Vitamin D intake especially important for Indian women. HRT during the menopausal transition is one of the most effective ways to protect bone density. If you are in your mid-40s and have not had your Vitamin D level checked recently, that is a good place to start.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">I've heard I might need Vitamin D. How does that connect to menopause?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Vitamin D deficiency is extremely widespread in India — studies suggest 60 to 90% of Indians are deficient despite abundant sunshine, primarily due to indoor lifestyles, skin pigmentation, and dietary factors. Estrogen helps the body use Vitamin D more efficiently, so when estrogen declines, Vitamin D status can worsen. Vitamin D is essential for calcium absorption and bone health, and deficiency also contributes to muscle weakness, fatigue, mood problems, and immune function. A simple blood test (25-OH Vitamin D) will tell you your level. Most perimenopausal and postmenopausal women benefit from supplementation, typically 1,000 to 2,000 IU per day, though your doctor will advise the right dose for you.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Does menopause increase the risk of heart disease?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes. Before menopause, estrogen provides a significant protective effect on the cardiovascular system — it helps maintain flexible blood vessels, manages cholesterol levels, and reduces inflammation. After menopause, that protection disappears. Indian women already have a higher predisposition to cardiovascular disease compared to Western women, and earlier menopause compounds this. HRT started within 10 years of menopause or before age 60 has actually been shown to reduce cardiovascular risk in many studies. Annual monitoring of blood pressure, cholesterol, and blood sugar becomes particularly important in the postmenopausal years.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">My mother had osteoporosis. Should I be worried?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes, family history of osteoporosis is one of the most important risk factors. If your mother or grandmother had osteoporosis, broken bones from minor falls, or significant height loss as they aged, your own risk is higher. Getting a baseline DEXA scan around the time of menopause — or earlier if you have other risk factors — gives you a concrete picture of where you stand. Preventive treatment is far more effective than reactive treatment, and there are several good options including HRT, calcium and Vitamin D supplementation, and weight-bearing exercise. A specialist will help you understand your risk and what to do about it.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">After menopause, will I still need gynaecological check-ups?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes, absolutely. Cervical cancer screening (Pap smear) continues to be recommended until age 65. Breast cancer risk is actually higher in postmenopausal years, so mammograms remain important — annual mammograms are recommended from age 40 onward. Pelvic examinations help detect any changes in the uterus, ovaries, or vaginal tissue. Any postmenopausal vaginal bleeding should be assessed immediately. Regular check-ups do not become less important after menopause — if anything, they become more targeted toward specific risks.</div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ═══ CATEGORY 7 ═══ -->
+      <div class="category-section bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm overflow-hidden">
+        <button class="category-toggle w-full flex items-center justify-between px-8 py-6 text-left group" data-category="6">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">groups</span>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-0.5">Category 7 of 7</p>
+              <h2 class="font-headline font-bold text-lg md:text-xl text-on-surface">Culture, Family &amp; Work</h2>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-outline chevron rotated shrink-0">expand_more</span>
+        </button>
+        <div class="category-body">
+          <div>
+            <div class="border-t border-outline-variant/15 mx-6 mb-2"></div>
+            <div class="px-6 pb-6 flex flex-col gap-2">
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">In my family, menopause is never discussed. Is it normal to feel embarrassed about it?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Completely normal — and you are not alone. In India, menopause carries a cultural silence that does not exist for most other health transitions. Unlike menstruation, which has become more openly discussed, menopause is still treated as something to be endured quietly, often associated with getting old or the end of a woman's relevance. This silence causes enormous harm — women suffer for years with treatable symptoms because they do not know what is happening or do not feel they can ask for help. You are not weak for struggling with this. You are not overreacting. Your symptoms are real, they have a medical name, and there are effective treatments. Starting the conversation — even just with your doctor — is enough.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">My husband thinks I'm just stressed or emotional. How do I explain this to him?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">This is one of the most difficult parts of the perimenopause experience. The mood changes, emotional sensitivity, and physical exhaustion of perimenopause are often invisible from the outside and easily dismissed as stress or overreaction. A few things that can help: share this page with him, or ask your Menostat doctor to provide a brief explanation that validates your symptoms as physical and hormonal rather than psychological. Many partners become significantly more understanding once they realise this is a documented medical transition with specific symptoms and treatments — not a personality change or a choice.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">My symptoms are affecting my performance at work. Is this something I should tell my employer about?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">You are not obligated to disclose medical information to your employer. However, if your symptoms — particularly brain fog, fatigue, concentration difficulties, or sleep deprivation — are significantly impacting your work, it may be worth having a private conversation with your HR team about adjustments, particularly if your company has a wellness policy. Research shows that 4 in 10 women say menopause symptoms affect their work at least weekly, and 17% have considered leaving their jobs because of it. The most important step is getting your symptoms treated — many women find that effective treatment dramatically restores their work performance and confidence.</div></div>
+                </div>
+              </div>
+
+              <div class="faq-item rounded-xl overflow-hidden border border-outline-variant/10">
+                <button class="question-toggle w-full flex items-start justify-between gap-4 px-6 py-5 text-left hover:bg-surface-container-low transition-colors group">
+                  <span class="font-headline font-semibold text-on-surface text-[15px] leading-snug">Can I get pregnant during perimenopause?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 chevron">expand_more</span>
+                </button>
+                <div class="faq-answer">
+                  <div><div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">Yes. Until you have gone a full 12 consecutive months without a period, pregnancy is possible. Irregular periods do not mean you have stopped ovulating entirely — ovulation can still occur unpredictably. If you do not want to become pregnant, contraception remains necessary. The mini pill, the hormonal IUD, condoms, and barrier methods are all options. Combined oral contraceptive pills carry higher clot risk and are generally not recommended after 40. Discuss contraception alongside menopause management with your specialist, as the two considerations overlap.</div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- No results message -->
+      <div id="no-results" class="hidden text-center py-20">
+        <span class="material-symbols-outlined text-5xl text-outline-variant mb-4 block">search_off</span>
+        <p class="font-headline font-bold text-xl text-on-surface mb-2">No results found</p>
+        <p class="text-on-surface-variant text-sm">Try a different search term or <button onclick="document.getElementById('faq-search').value='';document.getElementById('faq-search').dispatchEvent(new Event('input'));" class="text-primary underline">clear the search</button>.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── CTA ───────────────────────────────────────────────── -->
+  <section class="py-32 bg-surface">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-on-surface rounded-3xl p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+        <div class="absolute top-0 left-0 w-full h-1.5 bg-primary"></div>
+        <div class="relative z-10 flex flex-col items-center">
+          <span class="text-primary font-bold text-xs uppercase tracking-[0.4em] mb-8">Clinical Symptom Evaluation</span>
+          <h2 class="font-headline font-extrabold text-3xl md:text-5xl mb-12">Ready to understand what your body is telling you?</h2>
+          <ul class="flex flex-col gap-6 text-left max-w-md w-full mb-12 text-surface-variant/90 text-base">
+            <li class="flex gap-4">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <p>Get a personalised health profile reviewed by board-certified specialists.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <p>Understand how biological shifts are impacting your physical and mental health.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <p>Receive a custom care plan designed for your specific clinical needs.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="material-symbols-outlined text-primary">check_circle</span>
+              <p>Zero-friction digital intake with no waiting rooms or travel required.</p>
+            </li>
+          </ul>
+          <a href="index.html#pricing" class="w-full sm:w-auto bg-primary text-on-primary px-12 py-5 rounded-xl font-headline font-extrabold text-2xl hover:scale-105 transition-transform shadow-xl shadow-primary/30 inline-block">
+            Start Free Assessment
+          </a>
+          <p class="mt-8 text-sm text-surface-variant/50 italic font-light max-w-sm">Secure and confidential. Your data is protected by clinical privacy standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer class="w-full py-16 px-6 border-t border-slate-200/10 bg-slate-50 font-['Inter']">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-12">
+    <div class="text-2xl font-black text-slate-900 uppercase tracking-tighter">Menostat</div>
+    <div class="flex flex-wrap justify-center gap-8 text-[11px] uppercase tracking-widest font-bold">
+      <a class="text-slate-500 hover:text-primary transition-colors" href="#">Privacy Standards</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="#">Compliance</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="faq.html">FAQs</a>
+    </div>
+    <div class="text-slate-400 text-[10px] text-center md:text-right uppercase tracking-[0.2em] font-medium">
+      © 2026 Menostat Medical. Specialist Care for Menopause.
+    </div>
+  </div>
+</footer>
+
+<!-- ── JAVASCRIPT ─────────────────────────────────────────── -->
+<script>
+  // ── Category accordion ──────────────────────────────────
+  document.querySelectorAll('.category-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling;
+      const chevron = btn.querySelector('.chevron');
+      const isCollapsed = body.classList.contains('collapsed');
+      body.classList.toggle('collapsed', !isCollapsed);
+      chevron.classList.toggle('rotated', isCollapsed);
+    });
+  });
+
+  // ── Question accordion ──────────────────────────────────
+  document.querySelectorAll('.question-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const chevron = btn.querySelector('.chevron');
+      const isOpen = answer.classList.contains('open');
+      answer.classList.toggle('open', !isOpen);
+      chevron.classList.toggle('rotated', !isOpen);
+    });
+  });
+
+  // ── Live search ─────────────────────────────────────────
+  const searchInput = document.getElementById('faq-search');
+  const clearBtn = document.getElementById('search-clear');
+  const status = document.getElementById('search-status');
+  const noResults = document.getElementById('no-results');
+
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    clearBtn.classList.toggle('hidden', q === '');
+    status.classList.toggle('hidden', q === '');
+
+    if (q === '') {
+      // Reset all
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('hidden-by-search'));
+      document.querySelectorAll('.category-section').forEach(el => el.classList.remove('hidden-by-search'));
+      noResults.classList.add('hidden');
+      status.textContent = '';
+      return;
+    }
+
+    let totalVisible = 0;
+
+    document.querySelectorAll('.category-section').forEach(section => {
+      const items = section.querySelectorAll('.faq-item');
+      let categoryVisible = 0;
+
+      items.forEach(item => {
+        const questionText = item.querySelector('.question-toggle span').textContent.toLowerCase();
+        const answerText = item.querySelector('.faq-answer div div').textContent.toLowerCase();
+        const matches = questionText.includes(q) || answerText.includes(q);
+
+        item.classList.toggle('hidden-by-search', !matches);
+
+        if (matches) {
+          categoryVisible++;
+          // Auto-open matching answers
+          const answer = item.querySelector('.faq-answer');
+          const chevron = item.querySelector('.question-toggle .chevron');
+          answer.classList.add('open');
+          chevron.classList.add('rotated');
+          // Make sure parent category is expanded
+          const categoryBody = section.querySelector('.category-body');
+          const categoryChevron = section.querySelector('.category-toggle .chevron');
+          categoryBody.classList.remove('collapsed');
+          categoryChevron.classList.add('rotated');
+        }
+      });
+
+      section.classList.toggle('hidden-by-search', categoryVisible === 0);
+      totalVisible += categoryVisible;
+    });
+
+    noResults.classList.toggle('hidden', totalVisible > 0);
+    status.textContent = totalVisible > 0 ? `${totalVisible} result${totalVisible !== 1 ? 's' : ''} found` : '';
+  });
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    searchInput.dispatchEvent(new Event('input'));
+    searchInput.focus();
+  });
+</script>
+
+</body>
+</html>
