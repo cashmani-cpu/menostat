@@ -437,6 +437,74 @@
 </div>
 </main>
 
+<!-- ── BOOKING MODAL ─────────────────────────────────────── -->
+<div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" style="background:rgba(25,28,30,0.6);backdrop-filter:blur(4px);">
+  <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md mx-auto overflow-hidden">
+
+    <!-- Modal header -->
+    <div class="bg-primary px-8 pt-8 pb-6">
+      <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined text-white text-2xl">calendar_month</span>
+      </div>
+      <h2 class="font-headline font-extrabold text-2xl text-white mb-1">Book your consultation</h2>
+      <p class="text-white/75 text-sm leading-relaxed">A Menostat specialist will review your results and call you to confirm a time that works for you.</p>
+    </div>
+
+    <!-- Default form state -->
+    <div id="booking-form-state" class="px-8 py-6">
+      <div class="flex flex-col gap-4">
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Your name</label>
+          <input id="booking-name" type="text" placeholder="First name"
+            class="w-full border border-outline-variant rounded-xl px-4 py-3 text-sm font-['Inter'] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-white"/>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Email address</label>
+          <input id="booking-email" type="email" placeholder="you@example.com"
+            class="w-full border border-outline-variant rounded-xl px-4 py-3 text-sm font-['Inter'] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-white"/>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Mobile number <span class="text-primary">*</span></label>
+          <div class="flex gap-2">
+            <div class="flex items-center gap-2 px-3 py-3 border border-outline-variant rounded-xl bg-surface-container-low text-sm font-semibold text-on-surface-variant shrink-0">
+              🇮🇳 +91
+            </div>
+            <input id="booking-phone" type="tel" placeholder="98765 43210"
+              class="flex-1 border border-outline-variant rounded-xl px-4 py-3 text-sm font-['Inter'] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-white"/>
+          </div>
+          <p id="booking-phone-error" class="text-red-500 text-xs mt-1.5 hidden">Please enter a valid 10-digit mobile number.</p>
+        </div>
+
+        <p id="booking-general-error" class="text-red-500 text-xs hidden">Please fill in all required fields.</p>
+
+        <button onclick="submitBooking()" class="w-full bg-primary text-white py-4 rounded-xl font-headline font-bold text-base hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20 mt-1">
+          Request Appointment <span class="material-symbols-outlined align-middle ml-1 text-[18px]">send</span>
+        </button>
+        <button onclick="closeBookingModal()" class="w-full text-center text-xs text-on-surface-variant hover:text-primary transition-colors py-1">
+          Not right now
+        </button>
+      </div>
+    </div>
+
+    <!-- Confirmation state (hidden initially) -->
+    <div id="booking-confirm-state" class="hidden px-8 py-10 text-center">
+      <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+        <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+      </div>
+      <h3 class="font-headline font-extrabold text-xl text-on-surface mb-3">You're all set</h3>
+      <p class="text-on-surface-variant text-sm leading-relaxed mb-6">One of our specialists will be in touch within <strong class="text-on-surface">24 hours</strong> to confirm your appointment at a time that's convenient for you. Please keep an eye on your phone and email.</p>
+      <p class="text-xs text-on-surface-variant italic mb-6">All consultations are conducted via secure video call from the comfort of your home.</p>
+      <button onclick="closeBookingModal()" class="w-full bg-primary text-white py-3.5 rounded-xl font-headline font-bold text-sm hover:scale-[1.02] transition-transform">
+        Done
+      </button>
+    </div>
+
+  </div>
+</div>
+
 <script>
 // ═══════════════════════════════════════════════════
 // DATA
@@ -1144,9 +1212,9 @@ function showResults() {
     </div>
 
     <!-- CTA -->
-    <a href="index.html#pricing" class="block w-full text-center ${urgentCTA ? 'bg-primary shadow-xl shadow-primary/20' : 'bg-primary'} text-on-primary py-4 rounded-xl font-headline font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-transform mb-3">
+    <button onclick="openBookingModal()" class="block w-full text-center ${urgentCTA ? 'bg-primary shadow-xl shadow-primary/20' : 'bg-primary'} text-on-primary py-4 rounded-xl font-headline font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-transform mb-3">
       ${cat.cta} <span class="material-symbols-outlined align-middle ml-1">arrow_forward</span>
-    </a>
+    </button>
     <p class="text-center text-xs text-on-surface-variant mb-8">${cat.ctaNote}</p>
 
     <div class="border-t border-outline-variant/20 pt-6 text-center">
@@ -1165,6 +1233,75 @@ function showResults() {
     });
   }, 300);
 }
+
+// ═══════════════════════════════════════════════════
+// BOOKING MODAL
+// ═══════════════════════════════════════════════════
+function openBookingModal() {
+  const modal = document.getElementById('booking-modal');
+  // Pre-fill name and email if already captured
+  const nameVal = document.getElementById('q-name')?.value?.trim() || '';
+  const emailVal = window._capturedEmail || '';
+  document.getElementById('booking-name').value = nameVal;
+  document.getElementById('booking-email').value = emailVal;
+  // Reset to form state
+  document.getElementById('booking-form-state').classList.remove('hidden');
+  document.getElementById('booking-confirm-state').classList.add('hidden');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
+
+function closeBookingModal() {
+  const modal = document.getElementById('booking-modal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+}
+
+function submitBooking() {
+  const name  = document.getElementById('booking-name').value.trim();
+  const email = document.getElementById('booking-email').value.trim();
+  const phone = document.getElementById('booking-phone').value.trim().replace(/\s+/g, '');
+  const phoneErr = document.getElementById('booking-phone-error');
+  const genErr   = document.getElementById('booking-general-error');
+
+  phoneErr.classList.add('hidden');
+  genErr.classList.add('hidden');
+
+  const phoneValid = /^[6-9]\d{9}$/.test(phone);
+  const emailValid = !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if (!phoneValid) { phoneErr.classList.remove('hidden'); return; }
+  if (!emailValid || !name) { genErr.classList.remove('hidden'); return; }
+
+  // Store phone for reference
+  window._capturedPhone = phone;
+  if (email) window._capturedEmail = email;
+
+  // Submit to Google Sheets
+  if (SHEETS_URL && SHEETS_URL !== 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+    fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        timestamp:            new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        name:                 name,
+        email:                email,
+        phone:                '+91' + phone,
+        appointment_requested: 'yes'
+      })
+    }).catch(() => {});
+  }
+
+  // Show confirmation
+  document.getElementById('booking-form-state').classList.add('hidden');
+  document.getElementById('booking-confirm-state').classList.remove('hidden');
+}
+
+// Close modal on backdrop click
+document.getElementById('booking-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeBookingModal();
+});
 
 // ═══════════════════════════════════════════════════
 // BOOT
