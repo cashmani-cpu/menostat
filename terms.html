@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<link rel="icon" href="logo updated.png" type="image/png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terms of Service | MidHealth Labs</title>
+<meta name="description" content="MidHealth Labs terms of service — your agreement with Learnovate Skills Private Limited governing use of the platform."/>
+<link rel="canonical" href="https://midhealthlabs.com/terms.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary": "#ffffff",
+          "surface": "#f7f9fc",
+          "surface-container-lowest": "#ffffff",
+          "tertiary": "#4d5d70",
+          "surface-container-high": "#e6e8eb",
+          "outline": "#717786",
+          "primary": "#0059bb",
+          "background": "#f7f9fc",
+          "surface-container-low": "#f2f4f7",
+          "surface-container": "#eceef1",
+          "on-surface": "#191c1e",
+          "on-surface-variant": "#414754",
+          "outline-variant": "#c1c6d7",
+          "secondary": "#006b5c",
+        },
+        fontFamily: {
+          "headline": ["Manrope"],
+          "body": ["Inter"],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-outline-variant/10">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">MidHealth Labs</a>
+    <div class="hidden md:flex items-center gap-8 font-['Manrope'] font-semibold tracking-tight">
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html">Home</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#how-it-works">How it Works</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#symptoms">Symptoms</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#pricing">Assessment</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="faq.html">Resources</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="assessment.html" class="hidden sm:block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide hover:scale-95 duration-150 transition-transform shadow-lg shadow-primary/20">Start Free Assessment</a>
+      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden flex-col border-t border-outline-variant/10 bg-slate-50/95 backdrop-blur-xl font-['Manrope'] font-semibold">
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html">Home</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#how-it-works">How it Works</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#symptoms">Symptoms</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="faq.html">Resources</a>
+  </div>
+  <script>
+    const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('mobile-menu'),bar1=document.getElementById('bar1'),bar2=document.getElementById('bar2'),bar3=document.getElementById('bar3');
+    toggle.addEventListener('click',()=>{const o=!menu.classList.contains('hidden');menu.classList.toggle('hidden',o);menu.classList.toggle('flex',!o);bar1.style.transform=o?'':'translateY(8px) rotate(45deg)';bar2.style.opacity=o?'':'0';bar3.style.transform=o?'':'translateY(-8px) rotate(-45deg)';});
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.add('hidden');menu.classList.remove('flex');bar1.style.transform='';bar2.style.opacity='';bar3.style.transform='';}));
+  </script>
+</header>
+
+<main class="pt-20">
+
+  <!-- Page header -->
+  <section class="py-16 md:py-24 bg-surface-container-low border-b border-outline-variant/15">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-primary font-bold text-xs uppercase tracking-[0.3em] mb-4">Legal</p>
+      <h1 class="font-headline font-bold text-4xl md:text-5xl text-on-surface mb-4">Terms of Service</h1>
+      <p class="text-on-surface-variant text-lg">MidHealth Labs — a service of Learnovate Skills Private Limited</p>
+      <p class="text-on-surface-variant text-sm mt-2">Last updated: April 2026</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-16 md:py-20 bg-surface">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="space-y-12">
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Agreement to these terms</h2>
+          <p class="text-on-surface-variant leading-relaxed">By accessing or using the MidHealth Labs platform, including our website at midhealthlabs.com, our WhatsApp-based consultation and support service, and any related services, you agree to be bound by these Terms of Service. If you do not agree to these terms, you must not use the platform.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">These terms constitute a legally binding agreement between you and Learnovate Skills Private Limited, incorporated under the Companies Act 2013, Bangalore, Karnataka, India. References to "MidHealth Labs", "we", "us", or "our" refer to Learnovate Skills Private Limited.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Eligibility</h2>
+          <p class="text-on-surface-variant leading-relaxed">You must be at least 18 years of age to use this platform. By using the platform, you represent that you are 18 or older. The platform is designed for adult women residing in India. We do not knowingly provide services to persons outside India.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Nature of the service</h2>
+          <p class="text-on-surface-variant leading-relaxed">MidHealth Labs is a telehealth coordination platform. We connect patients with independent qualified gynecologists for remote consultations regarding perimenopause and menopause care. We coordinate prescription transmission to a licensed pharmacy partner and medication delivery to your home.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We are not a medical provider. We do not practice medicine. We do not make clinical decisions. All clinical assessments, diagnoses, and prescriptions are the sole responsibility of the Registered Medical Practitioner conducting your consultation. The doctor-patient relationship exists between you and your treating doctor, not between you and MidHealth Labs.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">Nothing on this platform constitutes medical advice. The educational content, symptom guides, and resource articles are for informational purposes only and do not replace a consultation with a qualified medical professional.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">The subscription</h2>
+          <p class="text-on-surface-variant leading-relaxed">MidHealth Labs operates on a monthly subscription basis. Your subscription covers access to the platform, one specialist gynecologist consultation per month, prescription issuance where clinically appropriate, medication dispensed and delivered to your home, WhatsApp-based support, and monthly follow-up care.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">The subscription fee is charged monthly in advance. By subscribing, you authorise us to charge your selected payment method on a recurring monthly basis until you cancel.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">Medication is included in the subscription fee for standard HRT protocols. Additional medications outside the standard protocol may be charged separately. Your doctor will inform you if additional charges apply before prescribing.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Cancellation and refunds</h2>
+          <p class="text-on-surface-variant leading-relaxed">You may cancel your subscription at any time by contacting us at <a href="mailto:support@midhealthlabs.com" class="text-primary font-semibold hover:underline">support@midhealthlabs.com</a> or through the platform. Cancellation takes effect at the end of the current billing period. You will not be charged for the following month after cancellation.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We do not offer refunds for the current month's subscription fee once a consultation has been conducted or medication has been dispatched.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">If a consultation has not been conducted and medication has not been dispatched within the current billing period, you may request a full refund of that month's fee within 7 days of the charge. Requests must be made in writing to <a href="mailto:support@midhealthlabs.com" class="text-primary font-semibold hover:underline">support@midhealthlabs.com</a>.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">If you are found to be ineligible for the service following your health assessment, you will receive a full refund of your subscription fee.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Your responsibilities</h2>
+          <p class="text-on-surface-variant leading-relaxed">You agree to provide accurate and complete information during the health assessment and consultation. Providing false or incomplete information may result in clinically inappropriate treatment and will be your sole responsibility.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">You agree to follow your doctor's instructions regarding medication use, dosage, and follow-up care. You agree to inform your doctor of any side effects, changes in your health, or new medications you begin during your treatment.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">You acknowledge that hormone replacement therapy and other medications prescribed through this platform carry potential risks and side effects that your doctor will discuss with you. You agree to read all information provided with your medication.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">You agree not to share your login credentials with any other person. You agree not to use the platform for any unlawful purpose.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">What we are responsible for</h2>
+          <p class="text-on-surface-variant leading-relaxed">We are responsible for operating the platform in compliance with applicable Indian law, providing access to qualified registered medical practitioners, ensuring prescriptions are transmitted accurately to the pharmacy partner, coordinating timely medication delivery, maintaining the security and confidentiality of your personal data, and providing responsive support for service-related queries.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">What we are not responsible for</h2>
+          <p class="text-on-surface-variant leading-relaxed">We are not responsible for the clinical decisions made by independent doctors on the platform. The prescribing doctor bears clinical responsibility for treatment decisions.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We are not responsible for delays in medication delivery caused by the pharmacy partner, courier services, incorrect addresses provided by you, or circumstances beyond our reasonable control.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We are not responsible for adverse reactions to medications that arise from undisclosed medical history, non-compliance with prescribed dosage, or interactions with medications not disclosed during your consultation.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We are not responsible for the availability or performance of third-party services including Google Meet, WhatsApp, or Razorpay.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Limitation of liability</h2>
+          <p class="text-on-surface-variant leading-relaxed">To the maximum extent permitted by applicable Indian law, our total liability to you for any claim arising from use of the platform shall not exceed the amount you paid us in the three months immediately preceding the event giving rise to the claim.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We shall not be liable for any indirect, consequential, incidental, or special damages arising from your use of the platform.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">Nothing in these terms limits our liability for death or personal injury caused by our negligence, fraud, or any liability that cannot be excluded under Indian law.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Intellectual property</h2>
+          <p class="text-on-surface-variant leading-relaxed">All content on the MidHealth Labs platform including text, graphics, logos, and educational materials is owned by or licensed to Learnovate Skills Private Limited. You may not reproduce, distribute, or create derivative works from any platform content without our prior written consent.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Third party services</h2>
+          <p class="text-on-surface-variant leading-relaxed">Our platform integrates with third-party services including Razorpay for payments, Google Meet for video consultations, and WhatsApp for communications. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the practices of these third parties.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Changes to the service</h2>
+          <p class="text-on-surface-variant leading-relaxed">We may modify the features, pricing, or availability of the service at any time. We will give you at least 30 days notice of any material changes to the subscription fee or core service features. Continued use of the platform after the effective date of changes constitutes acceptance of the modified terms.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Termination</h2>
+          <p class="text-on-surface-variant leading-relaxed">We may suspend or terminate your account if you breach these terms, provide false information, misuse the platform, or engage in conduct that we reasonably believe poses a risk to other users, our doctors, or the platform. We will give you notice and an opportunity to respond before termination except where immediate action is required for safety or legal reasons.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Governing law and disputes</h2>
+          <p class="text-on-surface-variant leading-relaxed">These terms are governed by the laws of India. Any disputes arising from these terms or your use of the platform shall be subject to the exclusive jurisdiction of the courts of Bangalore, Karnataka.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We encourage you to contact us at <a href="mailto:support@midhealthlabs.com" class="text-primary font-semibold hover:underline">support@midhealthlabs.com</a> before initiating any formal dispute. We will make reasonable efforts to resolve complaints informally within 30 days.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Severability</h2>
+          <p class="text-on-surface-variant leading-relaxed">If any provision of these terms is found to be unenforceable or invalid under applicable law, that provision shall be modified to the minimum extent necessary to make it enforceable. The remaining provisions shall continue in full force and effect.</p>
+        </div>
+
+        <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/15">
+          <h2 class="font-headline font-bold text-lg text-on-surface mb-4">Contact</h2>
+          <p class="text-on-surface-variant leading-relaxed">Learnovate Skills Private Limited<br/>MidHealth Labs<br/>Bangalore, Karnataka, India</p>
+          <p class="text-on-surface-variant mt-3">Legal: <a href="mailto:legal@midhealthlabs.com" class="text-primary font-semibold hover:underline">legal@midhealthlabs.com</a></p>
+          <p class="text-on-surface-variant mt-1">Grievance: <a href="mailto:grievance@midhealthlabs.com" class="text-primary font-semibold hover:underline">grievance@midhealthlabs.com</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full py-16 px-6 border-t border-slate-200/10 bg-slate-50 font-['Inter']">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-12">
+    <div class="text-2xl font-black text-slate-900 uppercase tracking-tighter">MidHealth Labs</div>
+    <div class="flex flex-wrap justify-center gap-8 text-[11px] uppercase tracking-widest font-bold">
+      <a class="text-slate-500 hover:text-primary transition-colors" href="privacy.html">Privacy Standards</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="compliance.html">Compliance</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="faq.html">FAQs</a>
+    </div>
+    <div class="text-slate-400 text-[10px] text-center md:text-right uppercase tracking-[0.2em] font-medium">
+      © 2026 MidHealth Labs. Specialist Care for Menopause.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<link rel="icon" href="logo updated.png" type="image/png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compliance | MidHealth Labs</title>
+<meta name="description" content="MidHealth Labs regulatory and compliance framework — telemedicine, data protection, advertising, and consumer protection compliance under Indian law."/>
+<link rel="canonical" href="https://midhealthlabs.com/compliance.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary": "#ffffff",
+          "surface": "#f7f9fc",
+          "surface-container-lowest": "#ffffff",
+          "tertiary": "#4d5d70",
+          "surface-container-high": "#e6e8eb",
+          "outline": "#717786",
+          "primary": "#0059bb",
+          "background": "#f7f9fc",
+          "surface-container-low": "#f2f4f7",
+          "surface-container": "#eceef1",
+          "on-surface": "#191c1e",
+          "on-surface-variant": "#414754",
+          "outline-variant": "#c1c6d7",
+          "secondary": "#006b5c",
+        },
+        fontFamily: {
+          "headline": ["Manrope"],
+          "body": ["Inter"],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-outline-variant/10">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">MidHealth Labs</a>
+    <div class="hidden md:flex items-center gap-8 font-['Manrope'] font-semibold tracking-tight">
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html">Home</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#how-it-works">How it Works</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#symptoms">Symptoms</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#pricing">Assessment</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="faq.html">Resources</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="assessment.html" class="hidden sm:block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide hover:scale-95 duration-150 transition-transform shadow-lg shadow-primary/20">Start Free Assessment</a>
+      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden flex-col border-t border-outline-variant/10 bg-slate-50/95 backdrop-blur-xl font-['Manrope'] font-semibold">
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html">Home</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#how-it-works">How it Works</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#symptoms">Symptoms</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="faq.html">Resources</a>
+  </div>
+  <script>
+    const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('mobile-menu'),bar1=document.getElementById('bar1'),bar2=document.getElementById('bar2'),bar3=document.getElementById('bar3');
+    toggle.addEventListener('click',()=>{const o=!menu.classList.contains('hidden');menu.classList.toggle('hidden',o);menu.classList.toggle('flex',!o);bar1.style.transform=o?'':'translateY(8px) rotate(45deg)';bar2.style.opacity=o?'':'0';bar3.style.transform=o?'':'translateY(-8px) rotate(-45deg)';});
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.add('hidden');menu.classList.remove('flex');bar1.style.transform='';bar2.style.opacity='';bar3.style.transform='';}));
+  </script>
+</header>
+
+<main class="pt-20">
+
+  <!-- Page header -->
+  <section class="py-16 md:py-24 bg-surface-container-low border-b border-outline-variant/15">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-primary font-bold text-xs uppercase tracking-[0.3em] mb-4">Legal</p>
+      <h1 class="font-headline font-bold text-4xl md:text-5xl text-on-surface mb-4">Compliance</h1>
+      <p class="text-on-surface-variant text-lg">MidHealth Labs — a service of Learnovate Skills Private Limited</p>
+      <p class="text-on-surface-variant text-sm mt-2">Last updated: April 2026</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-16 md:py-20 bg-surface">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="space-y-12">
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Overview</h2>
+          <p class="text-on-surface-variant leading-relaxed">MidHealth Labs operates as a telehealth coordination platform under the laws of India. This page sets out the regulatory framework within which we operate, the licences and registrations we hold or that govern our operations, and our commitments to clinical, data, and advertising compliance.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Legal structure</h2>
+          <p class="text-on-surface-variant leading-relaxed">MidHealth Labs is a service brand operated by Learnovate Skills Private Limited, incorporated under the Companies Act 2013. The company holds GST registration and complies with applicable tax obligations. The platform operates under the provisions of the Information Technology Act 2000 and qualifies as an intermediary under Section 79 of that Act.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Telemedicine compliance</h2>
+          <p class="text-on-surface-variant leading-relaxed">MidHealth Labs operates in accordance with the Telemedicine Practice Guidelines 2020, issued by the Board of Governors of the Medical Council of India as Appendix 5 to the Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations 2002.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We are a technology platform. We do not practice medicine. We do not employ doctors. All clinical decisions, diagnoses, and prescriptions are made by independent Registered Medical Practitioners (RMPs) who are registered with the National Medical Commission or their respective State Medical Councils.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">All doctors on the platform hold valid medical registration. All prescriptions issued through the platform are digital prescriptions issued by the treating RMP in compliance with the Telemedicine Practice Guidelines. All medications dispensed are Schedule H drugs prescribed in accordance with the Drugs and Cosmetics Act 1940 and the Drugs and Cosmetics Rules 1945.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We do not prescribe Schedule X drugs, narcotic substances, or psychotropic substances through the platform. We do not dispense medications without a valid prescription from an RMP.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Pharmacy compliance</h2>
+          <p class="text-on-surface-variant leading-relaxed">Medication dispensing and delivery is handled by a licensed pharmacy partner operating under a valid retail drug licence issued under the Drugs and Cosmetics Act 1940. MidHealth Labs does not hold a drug dispensing licence and does not stock, dispense, or deliver medications directly.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Data protection compliance</h2>
+          <p class="text-on-surface-variant leading-relaxed">We comply with the Digital Personal Data Protection Act 2023 (DPDPA) as a Data Fiduciary. We have implemented appropriate technical and organisational measures to protect personal data in accordance with the Act. We maintain records of processing activities, obtain explicit consent before processing sensitive health data, and provide users with the rights prescribed under the Act.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We comply with the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules 2011 with respect to the collection, storage, and processing of sensitive personal data including health information.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Advertising and marketing compliance</h2>
+          <p class="text-on-surface-variant leading-relaxed">All marketing and advertising materials published by MidHealth Labs comply with the Drugs and Magic Remedies (Objectionable Advertisements) Act 1954. We do not directly advertise prescription medications to consumers. All consumer-facing communications promote our consultation service and clinical support program, not the medications themselves.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">All paid partnerships with creators and influencers are disclosed in accordance with the Advertising Standards Council of India (ASCI) Guidelines for Influencer Advertising in Digital Media 2021. Sponsored content includes clear disclosure labels as required.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We do not make false, misleading, or exaggerated claims about health outcomes. All clinical statistics referenced in our communications are sourced from peer-reviewed literature or validated clinical data and are attributed accordingly.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Consumer protection compliance</h2>
+          <p class="text-on-surface-variant leading-relaxed">MidHealth Labs complies with the Consumer Protection Act 2019 and the Consumer Protection (E-Commerce) Rules 2020. Our subscription terms are clearly disclosed before purchase. Cancellation and refund rights are clearly communicated. We maintain a grievance redressal mechanism as required under these rules.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Grievance officer</h2>
+          <p class="text-on-surface-variant leading-relaxed">In accordance with the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules 2021, we have designated a Grievance Officer to address complaints related to our platform.</p>
+          <div class="mt-6 bg-surface-container-low rounded-2xl p-8 border border-outline-variant/15">
+            <p class="font-headline font-bold text-on-surface mb-3">Grievance Officer</p>
+            <p class="text-on-surface-variant leading-relaxed">MidHealth Labs, Learnovate Skills Private Limited<br/>Bangalore, Karnataka, India</p>
+            <p class="text-on-surface-variant mt-3">Email: <a href="mailto:grievance@midhealthlabs.com" class="text-primary font-semibold hover:underline">grievance@midhealthlabs.com</a></p>
+            <p class="text-on-surface-variant text-sm mt-3">Response time: Within 48 hours of receipt. Resolution within 30 days.</p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Reporting concerns</h2>
+          <p class="text-on-surface-variant leading-relaxed">If you have concerns about clinical conduct, data handling, or advertising practices, write to us at <a href="mailto:compliance@midhealthlabs.com" class="text-primary font-semibold hover:underline">compliance@midhealthlabs.com</a>. We investigate all concerns and respond within 14 working days.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full py-16 px-6 border-t border-slate-200/10 bg-slate-50 font-['Inter']">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-12">
+    <div class="text-2xl font-black text-slate-900 uppercase tracking-tighter">MidHealth Labs</div>
+    <div class="flex flex-wrap justify-center gap-8 text-[11px] uppercase tracking-widest font-bold">
+      <a class="text-slate-500 hover:text-primary transition-colors" href="privacy.html">Privacy Standards</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="compliance.html">Compliance</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="faq.html">FAQs</a>
+    </div>
+    <div class="text-slate-400 text-[10px] text-center md:text-right uppercase tracking-[0.2em] font-medium">
+      © 2026 MidHealth Labs. Specialist Care for Menopause.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

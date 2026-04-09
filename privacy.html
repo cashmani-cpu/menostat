@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<link rel="icon" href="logo updated.png" type="image/png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Policy | MidHealth Labs</title>
+<meta name="description" content="MidHealth Labs privacy policy — how we collect, use, and protect your personal and health data under Indian law."/>
+<link rel="canonical" href="https://midhealthlabs.com/privacy.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary": "#ffffff",
+          "surface": "#f7f9fc",
+          "surface-container-lowest": "#ffffff",
+          "tertiary": "#4d5d70",
+          "surface-container-high": "#e6e8eb",
+          "outline": "#717786",
+          "primary": "#0059bb",
+          "background": "#f7f9fc",
+          "surface-container-low": "#f2f4f7",
+          "surface-container": "#eceef1",
+          "on-surface": "#191c1e",
+          "on-surface-variant": "#414754",
+          "outline-variant": "#c1c6d7",
+          "secondary": "#006b5c",
+        },
+        fontFamily: {
+          "headline": ["Manrope"],
+          "body": ["Inter"],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-outline-variant/10">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">MidHealth Labs</a>
+    <div class="hidden md:flex items-center gap-8 font-['Manrope'] font-semibold tracking-tight">
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html">Home</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#how-it-works">How it Works</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#symptoms">Symptoms</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="index.html#pricing">Assessment</a>
+      <a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="faq.html">Resources</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="assessment.html" class="hidden sm:block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide hover:scale-95 duration-150 transition-transform shadow-lg shadow-primary/20">Start Free Assessment</a>
+      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden flex-col border-t border-outline-variant/10 bg-slate-50/95 backdrop-blur-xl font-['Manrope'] font-semibold">
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html">Home</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#how-it-works">How it Works</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="index.html#symptoms">Symptoms</a>
+    <a class="px-6 py-4 text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors border-b border-outline-variant/10" href="faq.html">Resources</a>
+  </div>
+  <script>
+    const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('mobile-menu'),bar1=document.getElementById('bar1'),bar2=document.getElementById('bar2'),bar3=document.getElementById('bar3');
+    toggle.addEventListener('click',()=>{const o=!menu.classList.contains('hidden');menu.classList.toggle('hidden',o);menu.classList.toggle('flex',!o);bar1.style.transform=o?'':'translateY(8px) rotate(45deg)';bar2.style.opacity=o?'':'0';bar3.style.transform=o?'':'translateY(-8px) rotate(-45deg)';});
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.add('hidden');menu.classList.remove('flex');bar1.style.transform='';bar2.style.opacity='';bar3.style.transform='';}));
+  </script>
+</header>
+
+<main class="pt-20">
+
+  <!-- Page header -->
+  <section class="py-16 md:py-24 bg-surface-container-low border-b border-outline-variant/15">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-primary font-bold text-xs uppercase tracking-[0.3em] mb-4">Legal</p>
+      <h1 class="font-headline font-bold text-4xl md:text-5xl text-on-surface mb-4">Privacy Policy</h1>
+      <p class="text-on-surface-variant text-lg">MidHealth Labs — a service of Learnovate Skills Private Limited</p>
+      <p class="text-on-surface-variant text-sm mt-2">Last updated: April 2026</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-16 md:py-20 bg-surface">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="prose-content space-y-12">
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Who we are</h2>
+          <p class="text-on-surface-variant leading-relaxed">MidHealth Labs is a telehealth platform for perimenopause and menopause care operated by Learnovate Skills Private Limited, a company incorporated under the Companies Act 2013 with its registered office in Bangalore, Karnataka, India. References to "we", "us", or "our" in this policy refer to Learnovate Skills Private Limited.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">MidHealth Labs connects women with qualified gynecologists for remote consultations, personalised treatment plans, and medication delivery. As part of providing this service, we collect and process personal and health-related information. This policy explains what we collect, why we collect it, how we use it, and what rights you have.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">The law that governs this policy</h2>
+          <p class="text-on-surface-variant leading-relaxed">This policy is written in compliance with the Digital Personal Data Protection Act 2023 (DPDPA), the Information Technology Act 2000 and its associated rules, the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules 2011, the Telemedicine Practice Guidelines 2020 issued by the Board of Governors of the Medical Council of India, and applicable provisions of the Indian Contract Act 1872.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">What personal data we collect</h2>
+          <p class="text-on-surface-variant leading-relaxed">We collect two categories of information.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">The first is basic personal information. This includes your name, date of birth, email address, phone number, and delivery address. We collect this when you register on the platform, complete the symptom assessment, or book a consultation.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">The second is sensitive personal data and information as defined under the IT Rules 2011. This includes your health and medical history, menstrual history and cycle information, details of symptoms and conditions you disclose during the assessment or consultation, medications you are currently taking, prescription and treatment records, video consultation recordings, and consultation transcripts. Health information is classified as sensitive personal data under Indian law and is subject to heightened protections under this policy.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We also collect technical data automatically when you use the platform. This includes your IP address, device type, browser type, pages visited, and time spent on the platform. This data is used for security monitoring and platform improvement.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Why we collect your data and the legal basis for processing</h2>
+          <p class="text-on-surface-variant leading-relaxed">We process your basic personal data to create and manage your account, process subscription payments, deliver medications to your home, send appointment reminders and follow-up communications, and provide customer support.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We process your sensitive health data to operate the clinical assessment, match you with an appropriate specialist, enable your doctor to review your history before the consultation, generate and transmit prescriptions to our pharmacy partner, support ongoing care and dose adjustments, and maintain clinical records as required by Indian telemedicine regulations.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">Under the DPDPA 2023, the legal basis for processing your personal data is your explicit consent, which you provide at the point of registration and assessment. You may withdraw consent at any time. Withdrawal of consent will result in discontinuation of your care and deletion of your account in accordance with this policy.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Who we share your data with</h2>
+          <p class="text-on-surface-variant leading-relaxed">We share your data only where necessary to provide the service.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">Your health information is shared with the specialist gynecologist assigned to your consultation. This is necessary for clinical care and is protected by medical confidentiality obligations.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">Your prescription is shared with our pharmacy partner for the purpose of dispensing and delivering your medication. The pharmacy partner is bound by a data processing agreement requiring them to handle your information with the same level of protection as we do.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">Your payment information is processed by Razorpay, a PCI-DSS compliant payment gateway. We do not store card details.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">Appointment scheduling and video consultation links are managed through Google Workspace and Google Meet. These services operate under their own privacy policies and are used solely for operational purposes.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">WhatsApp Business API services, used for appointment reminders and follow-up communications, are provided through a Meta-authorised Business Solution Provider.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We do not sell your personal data to any third party. We do not share your data with advertisers. We do not share your data with any party not listed above without your explicit consent except where required by law.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Data storage and security</h2>
+          <p class="text-on-surface-variant leading-relaxed">Your data is stored on servers located within India or in jurisdictions that provide an equivalent level of data protection as required under Indian law.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">We implement the following security measures: end-to-end encryption for all health data transmitted between you and our platform, role-based access controls ensuring only authorised personnel and your treating doctor can access your health records, regular security audits and vulnerability assessments, and strict data minimisation practices ensuring we collect only what is necessary for your care.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">In the event of a data breach that is likely to affect your rights or interests, we will notify you and the Data Protection Board of India within 72 hours of becoming aware of the breach, in accordance with the DPDPA 2023.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">How long we keep your data</h2>
+          <p class="text-on-surface-variant leading-relaxed">We retain your personal data for as long as your account is active. If you cancel your subscription, we retain your basic personal information for 12 months to facilitate any service-related queries or disputes.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">Your health and consultation records are retained for a minimum of seven years from the date of your last consultation. This retention period is required under Indian medical records regulations and the Telemedicine Practice Guidelines 2020 to support clinical continuity and medico-legal requirements.</p>
+          <p class="text-on-surface-variant leading-relaxed mt-4">After the applicable retention period, your data is securely deleted or anonymised.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Your rights under Indian law</h2>
+          <p class="text-on-surface-variant leading-relaxed">Under the Digital Personal Data Protection Act 2023, you have the following rights.</p>
+          <div class="mt-4 space-y-4">
+            <div class="flex gap-4">
+              <span class="material-symbols-outlined text-primary flex-none mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>
+              <p class="text-on-surface-variant leading-relaxed">The right to access the personal data we hold about you. You may request a copy of your data by writing to us at the address below.</p>
+            </div>
+            <div class="flex gap-4">
+              <span class="material-symbols-outlined text-primary flex-none mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>
+              <p class="text-on-surface-variant leading-relaxed">The right to correction of inaccurate or incomplete personal data.</p>
+            </div>
+            <div class="flex gap-4">
+              <span class="material-symbols-outlined text-primary flex-none mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>
+              <p class="text-on-surface-variant leading-relaxed">The right to erasure of your personal data, subject to our legal obligation to retain clinical records for the period described above.</p>
+            </div>
+            <div class="flex gap-4">
+              <span class="material-symbols-outlined text-primary flex-none mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>
+              <p class="text-on-surface-variant leading-relaxed">The right to withdraw consent at any time. Withdrawal does not affect the lawfulness of processing carried out before withdrawal.</p>
+            </div>
+            <div class="flex gap-4">
+              <span class="material-symbols-outlined text-primary flex-none mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>
+              <p class="text-on-surface-variant leading-relaxed">The right to nominate a person to exercise these rights on your behalf in the event of your death or incapacity.</p>
+            </div>
+            <div class="flex gap-4">
+              <span class="material-symbols-outlined text-primary flex-none mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>
+              <p class="text-on-surface-variant leading-relaxed">The right to file a complaint with the Data Protection Board of India if you believe your rights have been violated.</p>
+            </div>
+          </div>
+          <p class="text-on-surface-variant leading-relaxed mt-6">To exercise any of these rights, write to us at <a href="mailto:privacy@midhealthlabs.com" class="text-primary font-semibold hover:underline">privacy@midhealthlabs.com</a>. We will respond within 30 days.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Cookies and tracking</h2>
+          <p class="text-on-surface-variant leading-relaxed">Our website uses cookies to maintain session information and improve your experience. We do not use advertising cookies or third-party tracking cookies. You may disable cookies in your browser settings, though this may affect the functionality of the platform.</p>
+        </div>
+
+        <div>
+          <h2 class="font-headline font-bold text-xl text-on-surface mb-4 pb-3 border-b border-outline-variant/20">Changes to this policy</h2>
+          <p class="text-on-surface-variant leading-relaxed">We may update this policy from time to time to reflect changes in our practices or applicable law. We will notify you of any material changes by email or through a prominent notice on the platform at least 30 days before the changes take effect.</p>
+        </div>
+
+        <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/15">
+          <h2 class="font-headline font-bold text-lg text-on-surface mb-4">Contact us</h2>
+          <p class="text-on-surface-variant leading-relaxed">Learnovate Skills Private Limited<br/>MidHealth Labs<br/>Bangalore, Karnataka, India</p>
+          <p class="text-on-surface-variant mt-3">Email: <a href="mailto:privacy@midhealthlabs.com" class="text-primary font-semibold hover:underline">privacy@midhealthlabs.com</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full py-16 px-6 border-t border-slate-200/10 bg-slate-50 font-['Inter']">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-12">
+    <div class="text-2xl font-black text-slate-900 uppercase tracking-tighter">MidHealth Labs</div>
+    <div class="flex flex-wrap justify-center gap-8 text-[11px] uppercase tracking-widest font-bold">
+      <a class="text-slate-500 hover:text-primary transition-colors" href="privacy.html">Privacy Standards</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="compliance.html">Compliance</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+      <a class="text-slate-500 hover:text-primary transition-colors" href="faq.html">FAQs</a>
+    </div>
+    <div class="text-slate-400 text-[10px] text-center md:text-right uppercase tracking-[0.2em] font-medium">
+      © 2026 MidHealth Labs. Specialist Care for Menopause.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
