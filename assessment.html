@@ -519,9 +519,9 @@ const MRS_ITEMS = [
   { id: 'mrs5', label: 'Irritability', desc: 'Feeling nervous, inner tension, easily frustrated', subscale: 'psychological' },
   { id: 'mrs6', label: 'Anxiety', desc: 'Inner restlessness, feeling panicky or on edge', subscale: 'psychological' },
   { id: 'mrs7', label: 'Physical & mental exhaustion', desc: 'Low energy, impaired memory, difficulty concentrating', subscale: 'psychological' },
-  { id: 'mrs8', label: 'Sexual changes', desc: 'Changes in desire, activity, or satisfaction', subscale: 'urogenital' },
-  { id: 'mrs9', label: 'Bladder & urinary issues', desc: 'Urgency, frequency, leakage, or discomfort', subscale: 'urogenital' },
-  { id: 'mrs10', label: 'Vaginal dryness', desc: 'Dryness, burning, or discomfort during intercourse', subscale: 'urogenital' },
+  { id: 'mrs8', label: 'Loss of interest in sex or intimacy', desc: 'Reduced desire, feeling disconnected from intimacy, or changes in how you experience it — this is a hormonal change, not a relationship problem', subscale: 'urogenital' },
+  { id: 'mrs9', label: 'Bladder & urinary changes', desc: 'Sudden urgency to urinate, going more frequently, leakage, or recurring infections', subscale: 'urogenital' },
+  { id: 'mrs10', label: 'Vaginal discomfort or dryness', desc: 'Dryness, irritation, or itching in daily life; pain or discomfort during or after sex (intercourse) — extremely common and highly treatable', subscale: 'urogenital' },
   { id: 'mrs11', label: 'Joint & muscle pain', desc: 'Aching joints, stiffness, muscle discomfort', subscale: 'somatic' }
 ];
 
@@ -862,14 +862,34 @@ function buildAdaptiveModules() {
           <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
             <span class="material-symbols-outlined text-primary text-lg">healing</span>
           </div>
-          <p class="font-headline font-bold text-sm text-on-surface">Vaginal & urinary health</p>
+          <p class="font-headline font-bold text-sm text-on-surface">Vaginal, urinary & intimacy health</p>
         </div>
-        <p class="text-xs text-on-surface-variant mb-4">These symptoms are very common and highly treatable. Your answers are completely private.</p>
+        <p class="text-xs text-on-surface-variant mb-4">These symptoms are very common — up to 70% of women experience them — and all are highly treatable. Your answers are completely private and only seen by your specialist.</p>
         <p class="text-sm font-semibold text-on-surface mb-2">Which of these affects you most? (Select one)</p>
         <div class="flex flex-col gap-1.5">
-          ${['Vaginal dryness or irritation in daily life','Discomfort or pain during intercourse','Urgency or leakage of urine','Recurrent urinary infections','All of these equally'].map((o,i) => `
+          ${[
+            'Dryness, itching, or irritation in the vaginal area in daily life',
+            'Discomfort or pain during or after sex (intercourse)',
+            'Sudden urgency to urinate, leaking, or going very frequently',
+            'Recurring urinary tract infections',
+            'Loss of interest in sex or intimacy',
+            'More than one of these equally'
+          ].map((o,i) => `
             <label class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
               <input type="radio" name="gsm-primary" value="${i}" class="accent-primary"> <span class="text-sm text-on-surface">${o}</span>
+            </label>`).join('')}
+        </div>
+        <p class="text-sm font-semibold text-on-surface mt-5 mb-2">Has the change in intimacy or sexual interest affected your relationship or your wellbeing?</p>
+        <p class="text-xs text-on-surface-variant mb-3">This is not a relationship question — it helps your specialist understand the full impact so they can prioritise the right treatment.</p>
+        <div class="flex flex-col gap-1.5">
+          ${[
+            'Not really — it hasn\'t been a concern for me',
+            'Somewhat — I notice it but it hasn\'t caused significant distress',
+            'Yes — it affects my relationship or how I feel about myself',
+            'I\'d rather not say'
+          ].map((o,i) => `
+            <label class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant cursor-pointer hover:border-primary/40 transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="radio" name="gsm-intimacy-impact" value="${i}" class="accent-primary"> <span class="text-sm text-on-surface">${o}</span>
             </label>`).join('')}
         </div>
       </div>`;
