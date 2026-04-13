@@ -1,0 +1,14 @@
+# MidHealth Labs
+> India's first dedicated perimenopause and menopause telehealth platform. Provides specialist-led HRT consultations, a clinically validated symptom assessment, and home delivery of prescribed treatments to Indian women.
+
+## Key Pages
+- [Home](https://midhealthlabs.com/): Platform overview and free assessment entry point
+- [Free Symptom Assessment](https://midhealthlabs.com/assessment.html): MRS-based perimenopause and menopause screening tool — 8 minutes, personalised result
+- [FAQ](https://midhealthlabs.com/faq.html): 44 questions on perimenopause, menopause, HRT safety, and how MidHealth Labs works
+- [Science of Menopause](https://midhealthlabs.com/science-of-menopause.html): Physiological guide to menopause — hormones, phases, symptoms, long-term health for Indian women
+- [Understanding HRT](https://midhealthlabs.com/understanding-hrt.html): Evidence-based HRT guide including 2002 WHI reanalysis and current safety consensus
+- [Trusted Voices](https://midhealthlabs.com/trusted-voices.html): Positions on HRT and menopause from IMS, FOGSI, and Indian gynaecologists
+- [Care Options](https://midhealthlabs.com/care-options.html): Hormone therapy delivery methods available at MidHealth Labs
+
+## About
+Operated by Learnovate Skills Private Limited, Bangalore, India. Governed by Telemedicine Practice Guidelines 2020. Platform is an IT intermediary under Section 79, IT Act 2000. All prescriptions issued by registered medical practitioners.
